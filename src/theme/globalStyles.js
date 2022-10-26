@@ -1,7 +1,10 @@
 export const ThemeColors = {
-  primary: '#F3DAAF',
+  primary: '#FFD700',
   secondary: '#ECCDA6',
   ternary: '#6699CC',
+  background: "#E6E6E6",
+  textPrimary:"#362E00",
+  textSecondary:"#807E75"
 };
 
 export const FontSizes = {
@@ -20,7 +23,8 @@ export const FontSizes = {
   hugeS: 24,
   hugeSS: 26,
   huge: 32,
-  hugeX: 56,
+  hugeX:36,
+  hugeXX: 56,
 };
 
 export const FontWeight = {
@@ -31,4 +35,9 @@ export const FontWeight = {
   bold: '900',
 };
 
-export const FontFamily = {};
+export const FontFamily = {
+  primaryRegular: "DMSans-Regular",
+  primaryMedium: "DMSans-Medium",
+  primaryBold: "DMSans-Bold",
+  secondaryRegular: "Poppins-Regular"
+};

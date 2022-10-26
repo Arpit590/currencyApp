@@ -55,9 +55,9 @@ const OnBoarding = () => {
       horizontal={true}
       pagingEnabled
       bounces={false}
-      showsHorizontalScrollIndicator={false}
       decelerationRate={0}
       onScroll={onScroll}
+      scrollEnabled={false}
       renderItem={({item})=>(
         <View style={styles.view1}
         key={item?.id}
