@@ -39,5 +39,6 @@ export const FontFamily = {
   primaryRegular: "DMSans-Regular",
   primaryMedium: "DMSans-Medium",
   primaryBold: "DMSans-Bold",
-  secondaryRegular: "Poppins-Regular"
+  secondaryRegular: "Poppins-Regular",
+  secondaryBold: "Poppins-Bold"
 };

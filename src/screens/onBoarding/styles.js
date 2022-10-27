@@ -7,18 +7,22 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     backgroundColor: "#FFFFFF",
-    padding:35
+    paddingVertical:35
   },
   view1:{
     marginTop:100,
     alignSelf:"center",
-    marginRight:10
+    alignItems:"center",
+    marginHorizontal:35
   },
   image:{
     resizeMode:"contain",
     width:width-100,
     height:300,
     alignSelf:"center"
+  },
+  view:{
+    paddingHorizontal:35
   },
   view2:{
     marginTop:40
@@ -39,7 +43,8 @@ const styles = StyleSheet.create({
   bottom:{
     marginTop:80,
     flexDirection:"row",
-    alignItems:"center"
+    alignItems:"center",
+    paddingHorizontal:35
   },
   dotView:{
     flexDirection:"row",

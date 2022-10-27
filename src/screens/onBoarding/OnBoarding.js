@@ -4,6 +4,8 @@ import styles from './styles';
 import ArrowForwardIcon from "../../assets/ForwardArrowIcon.svg";
 import ArrowBackwardIcon from "../../assets/BackArrowIcon.svg";
 import { useState } from 'react';
+import { useRef } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 export const data = {
   images:[
@@ -32,28 +34,57 @@ const OnBoarding = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [scrollEnable, setScrollEnable] = useState(false);
+  const flatListRef = useRef();
+  const navigation = useNavigation();
 
-  const scrollHandler=()=>{
-    setScrollEnable(true);
+  const scrollHandler = () => {
+    if(currentIndex!==2){
+      flatListRef.current?.scrollToIndex({ animated: true, index: currentIndex + 1 }); 
+    }
+    else{
+      navigation.navigate("Signup")
+    }
+  }
+
+  const backHandler = () => {
+    if(currentIndex!==0){
+      flatListRef.current?.scrollToIndex({ animated: true, index: currentIndex - 1 }); 
+    }
   }
 
   const onScroll = (event) => {
     const slideSize = event.nativeEvent.layoutMeasurement.width;
     const index = event.nativeEvent.contentOffset.x / slideSize;
-    const roundIndex = Math.round(index);
+    const roundIndex = Math.ceil(index);
     setCurrentIndex(roundIndex);
   };
 
 
   return (
     <View style={styles.screen}>
-      <TouchableOpacity activeOpacity={0.8} style={styles.view}>
+      {(currentIndex!==0) ? 
+      <TouchableOpacity
+      onPress={backHandler}
+      activeOpacity={0.8} style={styles.view}>
         <ArrowBackwardIcon/>
       </TouchableOpacity>
+      :
+      <TouchableOpacity
+      activeOpacity={0.8} style={styles.view}>
+      </TouchableOpacity>
+      }
       <FlatList
       data={data.images}
+      ref={flatListRef}
       horizontal={true}
       pagingEnabled
+      scrollEnabled={false}
+      onScrollToIndexFailed={info => {
+        const wait = new Promise(resolve => setTimeout(resolve, 500));
+        wait.then(() => {
+            flatListRef.current?.scrollToIndex({ index: info.index, animated: true });
+        });
+      }}
       bounces={false}
       showsHorizontalScrollIndicator={false}
       decelerationRate={0}
