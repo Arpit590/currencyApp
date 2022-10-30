@@ -4,8 +4,9 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {StatusBar} from 'react-native';
 import {ThemeColors} from './theme';
 import OnBoarding from './screens/onBoarding/OnBoarding';
-import signupScreen from './screens/AuthenticationScreens/SignupScreen/SignupScreen';
-import loginScreen from './screens/AuthenticationScreens/LoginScreen/LoginScreen';
+import SignupScreen from './screens/AuthenticationScreens/SignupScreen/SignupScreen';
+import VerificationScreen from './screens/AuthenticationScreens/VerificationScreen/VerificationScreen';
+import ReadyScreen from './screens/AuthenticationScreens/ReadyScreen/ReadyScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,8 +22,9 @@ export default function Main() {
         screenOptions={{headerShown: false}}
         initialRouteName="OnBoarding">
         <Stack.Screen name="OnBoarding" component={OnBoarding} />
-        <Stack.Screen name="Signup" component={signupScreen} />
-        <Stack.Screen name="Login" component={loginScreen} />
+        <Stack.Screen name="Signup" component={SignupScreen} />
+        <Stack.Screen name="Verification" component={VerificationScreen}/>
+        <Stack.Screen name="Ready" component={ReadyScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
