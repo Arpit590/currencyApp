@@ -2,9 +2,9 @@ export const ThemeColors = {
   primary: '#FFD700',
   secondary: '#ECCDA6',
   ternary: '#6699CC',
-  background: "#E6E6E6",
-  textPrimary:"#362E00",
-  textSecondary:"#807E75"
+  background: '#E6E6E6',
+  textPrimary: '#362E00',
+  textSecondary: '#807E75',
 };
 
 export const FontSizes = {
@@ -23,7 +23,7 @@ export const FontSizes = {
   hugeS: 24,
   hugeSS: 26,
   huge: 32,
-  hugeX:36,
+  hugeX: 36,
   hugeXX: 56,
 };
 
@@ -36,9 +36,9 @@ export const FontWeight = {
 };
 
 export const FontFamily = {
-  primaryRegular: "DMSans-Regular",
-  primaryMedium: "DMSans-Medium",
-  primaryBold: "DMSans-Bold",
-  secondaryRegular: "Poppins-Regular",
-  secondaryBold: "Poppins-Bold"
+  primaryRegular: 'DMSans-Regular',
+  primaryMedium: 'DMSans-Medium',
+  primaryBold: 'DMSans-Bold',
+  secondaryRegular: 'Poppins-Regular',
+  secondaryBold: 'Poppins-Bold',
 };

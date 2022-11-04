@@ -23,8 +23,8 @@ export default function Main() {
         initialRouteName="OnBoarding">
         <Stack.Screen name="OnBoarding" component={OnBoarding} />
         <Stack.Screen name="Signup" component={SignupScreen} />
-        <Stack.Screen name="Verification" component={VerificationScreen}/>
-        <Stack.Screen name="Ready" component={ReadyScreen}/>
+        <Stack.Screen name="Verification" component={VerificationScreen} />
+        <Stack.Screen name="Ready" component={ReadyScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
