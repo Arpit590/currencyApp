@@ -7,6 +7,11 @@ import OnBoarding from './screens/onBoarding/OnBoarding';
 import SignupScreen from './screens/AuthenticationScreens/SignupScreen/SignupScreen';
 import VerificationScreen from './screens/AuthenticationScreens/VerificationScreen/VerificationScreen';
 import ReadyScreen from './screens/AuthenticationScreens/ReadyScreen/ReadyScreen';
+import Navigation from './navigation/Navigation';
+import HomeScreen from './screens/home/Home';
+import ProfileScreen from './screens/profile/Profile';
+import ExploreScreen from './screens/explore/Explore';
+import GeneratorScreen from './screens/generator/Generator';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +30,11 @@ export default function Main() {
         <Stack.Screen name="Signup" component={SignupScreen} />
         <Stack.Screen name="Verification" component={VerificationScreen} />
         <Stack.Screen name="Ready" component={ReadyScreen} />
+        <Stack.Screen name="Navigation" component={Navigation} />
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
+        <Stack.Screen name="ExploreScreen" component={ExploreScreen} />
+        <Stack.Screen name="GeneratorScreen" component={GeneratorScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -5,6 +5,9 @@ export const ThemeColors = {
   background: '#E6E6E6',
   textPrimary: '#362E00',
   textSecondary: '#807E75',
+  white: '#FFFFFF',
+  grey: '#94928C',
+  lightYellow: '#FFFCEC',
 };
 
 export const FontSizes = {

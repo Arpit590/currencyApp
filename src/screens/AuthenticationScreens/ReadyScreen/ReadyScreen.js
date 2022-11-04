@@ -6,8 +6,10 @@ import PrimaryButton from '../../../Atoms/PrimaryButton';
 import SecondaryButton from '../../../Atoms/SecondaryButton';
 import {useState} from 'react';
 import ModalView from '../../../Atoms/ModalView';
+import {useNavigation} from '@react-navigation/native';
 
 const ReadyScreen = () => {
+  const navigation = useNavigation();
   const [openModal, setOpenModal] = useState(false);
 
   const fingerPrintHandler = () => {
@@ -31,7 +33,10 @@ const ReadyScreen = () => {
           buttonHandler={fingerPrintHandler}
         />
         <Text style={{marginBottom: 0}}></Text>
-        <SecondaryButton title="Skip for now" buttonHandler={() => {}} />
+        <SecondaryButton
+          title="Skip for now"
+          buttonHandler={() => navigation.navigate('Navigation')}
+        />
       </View>
       <ModalView openModal={openModal} onClose={() => setOpenModal(false)}>
         <View style={styles.modal}>
