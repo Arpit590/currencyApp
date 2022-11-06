@@ -1,39 +1,35 @@
 import {Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import styles from './styles';
-import FingerPrintIcon from '../../../assets/FingerPrintIcon.svg';
+import FingerPrintIcon from '../../../assets/AddFinger.svg';
 import PrimaryButton from '../../../Atoms/PrimaryButton';
 import SecondaryButton from '../../../Atoms/SecondaryButton';
 import {useState} from 'react';
 import ModalView from '../../../Atoms/ModalView';
 import {useNavigation} from '@react-navigation/native';
 
-const ReadyScreen = () => {
+const AddFingerPrint = () => {
   const navigation = useNavigation();
 
-  const homeHandler = () => {
-    navigation.navigate("Navigation");
+  const fingerPrintHandler = () => {
+    navigation.navigate("CreatePin");
   };
 
   return (
     <View style={styles.screen}>
+        <Text style={styles.text}>Add FingerPrint</Text>
       <View style={styles.view}>
-        <FingerPrintIcon />
-        <View style={styles.container}>
-          <Text style={styles.text}>Your vault is ready...</Text>
-          <Text style={styles.text1}>
-            Store the info that feeds your online life.
-          </Text>
-        </View>
+        <FingerPrintIcon/>
+        <Text style={styles.desc}>Touch the finger print sensor</Text>
       </View>
       <View style={styles.view2}>
         <PrimaryButton
-          title="Go to Home"
-          buttonHandler={homeHandler}
+          title="Add Pin"
+          buttonHandler={fingerPrintHandler}
         />
       </View>
     </View>
   );
 };
 
-export default ReadyScreen;
+export default AddFingerPrint;

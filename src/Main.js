@@ -12,6 +12,10 @@ import HomeScreen from './screens/home/Home';
 import ProfileScreen from './screens/profile/Profile';
 import ExploreScreen from './screens/explore/Explore';
 import GeneratorScreen from './screens/generator/Generator';
+import SeedPhrase from './screens/AuthenticationScreens/SeedPhrase/SeedPhrase';
+import VerifySeed from './screens/AuthenticationScreens/SeedPhrase/VerifySeed';
+import CreatePin from './screens/AuthenticationScreens/CreatePin/CreatePin';
+import AddFingerPrint from './screens/AuthenticationScreens/AddFingerPrint/AddFingerPrint';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,6 +33,10 @@ export default function Main() {
         <Stack.Screen name="OnBoarding" component={OnBoarding} />
         <Stack.Screen name="Signup" component={SignupScreen} />
         <Stack.Screen name="Verification" component={VerificationScreen} />
+        <Stack.Screen name="Seed" component={SeedPhrase} />
+        <Stack.Screen name="VerifySeed" component={VerifySeed} />
+        <Stack.Screen name="AddFinger" component={AddFingerPrint} />
+        <Stack.Screen name="CreatePin" component={CreatePin} />
         <Stack.Screen name="Ready" component={ReadyScreen} />
         <Stack.Screen name="Navigation" component={Navigation} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
