@@ -1,0 +1,126 @@
+import {Dimensions, StyleSheet} from 'react-native';
+import { FontFamily, FontSizes, ThemeColors } from '../../theme/globalStyles';
+
+const {width, height} = Dimensions.get("window")
+
+const styles = StyleSheet.create({
+    screen: {
+        flex: 1,
+        backgroundColor: "#FFFFFF",
+        paddingVertical:35
+      },
+      view:{
+        paddingHorizontal:35
+      },
+      search:{
+        borderWidth:1,
+        borderColor:ThemeColors.textSecondary,
+        borderRadius:10,
+        paddingHorizontal:10,
+        flexDirection:"row",
+        alignItems:"center",
+        justifyContent:"space-between"
+      },
+      searchInput:{
+        fontFamily:FontFamily.secondaryRegular,
+        color:ThemeColors.textSecondary,
+        fontSize:FontSizes.normal,
+        flex:1
+      },
+      view1:{
+        marginTop:30
+      },
+      view2:{
+        marginBottom:20,
+        borderBottomColor:ThemeColors.textSecondary,
+        borderBottomWidth:1,
+        width:width,
+        alignSelf:"center",
+        paddingBottom:15,
+        paddingHorizontal:35,
+      },
+      headingText:{
+        fontFamily:FontFamily.secondaryBold,
+        color:"#BBBAB3",
+        fontSize:FontSizes.large,
+        marginBottom:10
+      },
+      option:{
+        borderWidth:1,
+        borderColor:ThemeColors.textSecondary,
+        padding:5,
+        paddingHorizontal:15,
+        borderRadius:16,
+        flexDirection:"row",
+        alignItems:"center",
+        marginRight:10
+      },
+      optionText:{
+        fontFamily:FontFamily.secondaryRegular,
+        color:ThemeColors.textPrimary,
+        fontSize:FontSizes.normal,
+        marginRight:10,
+      },
+      box:{
+        flexDirection:"row",
+        alignItems:"center",
+        padding:10,
+        justifyContent:"space-between",
+        borderBottomWidth:1,
+        borderBottomColor:ThemeColors.textSecondary,
+        paddingHorizontal:35
+      },
+      boxContainer:{
+        flexDirection:"row",
+        alignItems:"flex-start",
+      },
+      boxImage:{
+        resizeMode:"contain",
+        width:50,
+        height:50
+      },
+      boxTextContainer:{
+        flexDirection:"row",
+        alignItems:"flex-start",
+        marginLeft:10
+      },
+      boxText:{
+        fontFamily:FontFamily.primaryBold,
+        fontSize:FontSizes.largeX,
+        color:ThemeColors.textPrimary,
+        marginRight:12,
+        maxWidth:150
+      },
+      boxText1:{
+        fontFamily:FontFamily.secondaryRegular,
+        fontSize:FontSizes.normal,
+        color:"#94928C",
+        maxWidth:150
+      },
+      view3:{
+        backgroundColor:ThemeColors.primary,
+        borderRadius:6,
+        padding:5
+      },
+      boxText2:{
+        fontFamily:FontFamily.secondaryBold,
+        fontSize:FontSizes.tiny,
+        color:ThemeColors.textPrimary
+      },
+      view4:{
+        position:"absolute",
+        backgroundColor:"#FFFFFF",
+        bottom:0,
+        width:"100%",
+        alignItems:"center"
+      },
+      view5:{
+        flexDirection:"row",
+        alignItems:"center",
+        justifyContent:"space-between",
+        width:"100%",
+        paddingHorizontal:35
+      }
+})
+
+export default styles;
