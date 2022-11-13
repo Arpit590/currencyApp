@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {TouchableOpacity, View, Text, Animated} from 'react-native';
+import {TouchableOpacity, View, Text, Animated, Modal} from 'react-native';
 import {
   Home_Icon_Off,
   Home_Icon_On,
@@ -10,9 +10,18 @@ import {
   Profile_Icon_On,
   Profile_Icon_Off,
   BottomTab_Icon,
-  Plus_Icon,
+  Plus_Icon
 } from '../../assets/index';
 import {ThemeColors} from '../../theme';
+import CloseIcon from "../../assets/Close.svg";
+import ContactsIcon from "../../assets/Contacts.svg";
+import FilesIcon from "../../assets/Files.svg";
+import IdentityIcon from "../../assets/Identity.svg";
+import LoginsIcon from "../../assets/Logins.svg";
+import RecordsIcon from "../../assets/Records.svg";
+import BookMarksIcon from "../../assets/BookMarks.svg";
+import FinanceIcon from "../../assets/Finance.svg";
+import NotesIcon from "../../assets/Notes.svg";
 import styles from './styles';
 
 const Footer = props => {
@@ -20,6 +29,7 @@ const Footer = props => {
     rotate: false,
     animateCross: new Animated.Value(0),
   });
+  const [openModal, setOpenModal] = useState(false);
 
   const rotation = state.animateCross.interpolate({
     inputRange: [0, 1],
@@ -29,11 +39,15 @@ const Footer = props => {
 
   const animateIn = () => {
     Animated.timing(
-      Animated.timing(state.animateCross, {toValue: 1, duration: 2000}).start(),
+      Animated.timing(state.animateCross, {
+        toValue: 1, 
+        duration: 1000, 
+        useNativeDriver:false}).start(),
     ).start();
   };
 
   return (
+    <>
     <View style={styles.footerContainer}>
       <BottomTab_Icon />
       <View style={styles.container}>
@@ -75,13 +89,27 @@ const Footer = props => {
             Explore
           </Text>
         </View>
-
-        <TouchableOpacity style={styles.addBtn}>
+      {(openModal===false) ?
+        <TouchableOpacity
+        onPress={()=>{
+         setOpenModal(true)
+        }}
+        activeOpacity={0.8}
+        style={styles.addBtn}>
           <Animated.View style={{transform: [{rotate: rotation}]}}>
             <Plus_Icon />
           </Animated.View>
         </TouchableOpacity>
-
+        :
+        <TouchableOpacity
+        onPress={()=>setOpenModal(false)}
+        activeOpacity={0.8}
+        style={styles.addBtn}>
+          <Animated.View style={{transform: [{rotate: rotation}]}}>
+            <CloseIcon/>
+          </Animated.View>
+        </TouchableOpacity>
+        }
         <View
           style={{
             ...styles.iconContainer,
@@ -128,6 +156,86 @@ const Footer = props => {
         </View>
       </View>
     </View>
+        <Modal
+        animationType='fade'
+        visible={openModal}
+        onRequestClose={()=>setOpenModal(false)}
+        transparent={true}
+        style={{zIndex:-100}}
+        >
+          <View
+          style={styles.modal}>
+              <View style={styles.modalBox}>
+                <View style={styles.view1}>
+                  <TouchableOpacity
+                  onPress={()=>{
+                    setOpenModal(false)
+                  }}
+                  activeOpacity={0.8} style={styles.box}>
+                    <IdentityIcon/>
+                    <Text style={styles.boxText}>Identity</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity 
+                  onPress={()=>{
+                    setOpenModal(false)
+                  }}
+                  activeOpacity={0.8} style={styles.box}>
+                    <BookMarksIcon/>
+                    <Text style={styles.boxText}>BookMarks</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity 
+                  onPress={()=>{
+                    setOpenModal(false)
+                  }}
+                  activeOpacity={0.8} style={styles.box}>
+                    <FilesIcon/>
+                    <Text style={styles.boxText}>Files</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity 
+                  onPress={()=>{
+                    setOpenModal(false)
+                  }}
+                  activeOpacity={0.8} style={styles.box}>
+                    <RecordsIcon/>
+                    <Text style={styles.boxText}>Records</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                  onPress={()=>{
+                    setOpenModal(false)
+                  }}
+                  activeOpacity={0.8} style={styles.box}>
+                    <ContactsIcon/>
+                    <Text style={styles.boxText}>Contacts</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                  onPress={()=>{
+                    setOpenModal(false)
+                  }}
+                  activeOpacity={0.8} style={styles.box}>
+                    <FinanceIcon/>
+                    <Text style={styles.boxText}>Finance</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity 
+                  onPress={()=>{
+                    setOpenModal(false)
+                  }}
+                  activeOpacity={0.8} style={styles.box}>
+                    <NotesIcon/>
+                    <Text style={styles.boxText}>Notes</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                  onPress={()=>{
+                    setOpenModal(false)
+                  }}
+                  activeOpacity={0.8} style={styles.box}>
+                    <LoginsIcon/>
+                    <Text style={styles.boxText}>Logins</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+          </View>
+        </Modal>
+        </>
   );
 };
 

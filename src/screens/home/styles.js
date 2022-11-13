@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
       },
       search:{
         borderWidth:1,
-        borderColor:ThemeColors.textSecondary,
+        borderColor:"#DBD9D1",
         borderRadius:10,
         paddingHorizontal:10,
         flexDirection:"row",
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         padding:10,
         justifyContent:"space-between",
         borderBottomWidth:1,
-        borderBottomColor:ThemeColors.textSecondary,
+        borderBottomColor:"#DBD9D1",
         paddingHorizontal:35
       },
       boxContainer:{
@@ -108,11 +108,12 @@ const styles = StyleSheet.create({
         color:ThemeColors.textPrimary
       },
       view4:{
-        position:"absolute",
         backgroundColor:"#FFFFFF",
-        bottom:0,
         width:"100%",
-        alignItems:"center"
+        alignItems:"center",
+        borderBottomColor:"#DBD9D1",
+        borderBottomWidth:1,
+        paddingTop:20
       },
       view5:{
         flexDirection:"row",
@@ -120,6 +121,24 @@ const styles = StyleSheet.create({
         justifyContent:"space-between",
         width:"100%",
         paddingHorizontal:35
+      },
+      view6:{
+        flexDirection:"row",
+        alignItems:"center",
+        justifyContent:"space-evenly",
+        width:"100%",
+        borderTopColor:"#DBD9D1",
+        borderTopWidth:1,
+        paddingVertical:20
+      },
+      view7:{
+        alignItems:"center"
+      },
+      infoText:{
+        fontFamily:FontFamily.secondaryRegular,
+        fontSize:FontSizes.smallX,
+        color:ThemeColors.textPrimary,
+        marginTop:5
       }
 })
 
