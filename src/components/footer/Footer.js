@@ -23,8 +23,10 @@ import BookMarksIcon from "../../assets/BookMarks.svg";
 import FinanceIcon from "../../assets/Finance.svg";
 import NotesIcon from "../../assets/Notes.svg";
 import styles from './styles';
+import { useNavigation } from '@react-navigation/native';
 
 const Footer = props => {
+  const navigation = useNavigation();
   const [state, setState] = useState({
     rotate: false,
     animateCross: new Animated.Value(0),
@@ -169,7 +171,8 @@ const Footer = props => {
                 <View style={styles.view1}>
                   <TouchableOpacity
                   onPress={()=>{
-                    setOpenModal(false)
+                    setOpenModal(false);
+                    navigation.navigate("Identity")
                   }}
                   activeOpacity={0.8} style={styles.box}>
                     <IdentityIcon/>
@@ -178,6 +181,7 @@ const Footer = props => {
                   <TouchableOpacity 
                   onPress={()=>{
                     setOpenModal(false)
+                    navigation.navigate("Bookmarks")
                   }}
                   activeOpacity={0.8} style={styles.box}>
                     <BookMarksIcon/>
@@ -185,7 +189,8 @@ const Footer = props => {
                   </TouchableOpacity>
                   <TouchableOpacity 
                   onPress={()=>{
-                    setOpenModal(false)
+                    setOpenModal(false);
+                    navigation.navigate("Files")
                   }}
                   activeOpacity={0.8} style={styles.box}>
                     <FilesIcon/>
@@ -193,7 +198,8 @@ const Footer = props => {
                   </TouchableOpacity>
                   <TouchableOpacity 
                   onPress={()=>{
-                    setOpenModal(false)
+                    setOpenModal(false);
+                    navigation.navigate("Records")
                   }}
                   activeOpacity={0.8} style={styles.box}>
                     <RecordsIcon/>
@@ -210,6 +216,7 @@ const Footer = props => {
                   <TouchableOpacity
                   onPress={()=>{
                     setOpenModal(false)
+                    navigation.navigate("Finance")
                   }}
                   activeOpacity={0.8} style={styles.box}>
                     <FinanceIcon/>
@@ -225,7 +232,8 @@ const Footer = props => {
                   </TouchableOpacity>
                   <TouchableOpacity
                   onPress={()=>{
-                    setOpenModal(false)
+                    setOpenModal(false);
+                    navigation.navigate("Logins")
                   }}
                   activeOpacity={0.8} style={styles.box}>
                     <LoginsIcon/>
