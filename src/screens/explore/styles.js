@@ -1,5 +1,5 @@
 import {Dimensions, StyleSheet} from 'react-native';
-import {FontFamily, FontSizes, ThemeColors} from '../../theme/globalStyles';
+import {FontFamily, FontSizes, MetricsSizes, ThemeColors} from '../../theme';
 
 const {width, height} = Dimensions.get('window');
 
@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     color: ThemeColors.textSecondary,
     fontSize: FontSizes.normal,
     flex: 1,
+    height: MetricsSizes.vs48,
   },
   view1: {
     marginTop: 30,
