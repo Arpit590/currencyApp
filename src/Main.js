@@ -61,25 +61,28 @@ export default function Main() {
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
         <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
         <Stack.Screen name="ExploreScreen" component={ExploreScreen} />
-        <Stack.Screen name="Identity" component={Identity}/>
-        <Stack.Screen name="Identity Details" component={IdentityDetailsScreen}/>
-        <Stack.Screen name="Tax" component={Tax}/>
-        <Stack.Screen name="DL" component={DL}/>
-        <Stack.Screen name="Passport" component={Passport}/>
-        <Stack.Screen name="Tour" component={Tour}/>
-        <Stack.Screen name="Membership" component={Membership}/>
-        <Stack.Screen name="Records" component={RecordsMain}/>
-        <Stack.Screen name="Medical Reports" component={MedicalReports}/>
-        <Stack.Screen name="Insurance" component={Insurance}/>
-        <Stack.Screen name="Certificate" component={Certificate}/>
-        <Stack.Screen name="Invoice" component={Invoice}/>
-        <Stack.Screen name="Files" component={Files}/>
-        <Stack.Screen name="Bookmarks" component={Bookmarks}/>
-        <Stack.Screen name="Finance" component={FinanceMain}/>
-        <Stack.Screen name="Logins" component={LoginsMain}/>
-        <Stack.Screen name="BankAccounts" component={BankAccount}/>
-        <Stack.Screen name="Lender" component={Lender}/>
-        <Stack.Screen name="CryptoWallet" component={CryptoWallet}/>
+        <Stack.Screen name="Identity" component={Identity} />
+        <Stack.Screen
+          name="Identity Details"
+          component={IdentityDetailsScreen}
+        />
+        <Stack.Screen name="Tax" component={Tax} />
+        <Stack.Screen name="DL" component={DL} />
+        <Stack.Screen name="Passport" component={Passport} />
+        <Stack.Screen name="Tour" component={Tour} />
+        <Stack.Screen name="Membership" component={Membership} />
+        <Stack.Screen name="Records" component={RecordsMain} />
+        <Stack.Screen name="Medical Reports" component={MedicalReports} />
+        <Stack.Screen name="Insurance" component={Insurance} />
+        <Stack.Screen name="Certificate" component={Certificate} />
+        <Stack.Screen name="Invoice" component={Invoice} />
+        <Stack.Screen name="Files" component={Files} />
+        <Stack.Screen name="Bookmarks" component={Bookmarks} />
+        <Stack.Screen name="Finance" component={FinanceMain} />
+        <Stack.Screen name="Logins" component={LoginsMain} />
+        <Stack.Screen name="BankAccounts" component={BankAccount} />
+        <Stack.Screen name="Lender" component={Lender} />
+        <Stack.Screen name="CryptoWallet" component={CryptoWallet} />
         <Stack.Screen name="GeneratorScreen" component={GeneratorScreen} />
       </Stack.Navigator>
     </NavigationContainer>
