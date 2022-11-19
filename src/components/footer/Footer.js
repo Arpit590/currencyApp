@@ -131,7 +131,7 @@ const Footer = props => {
             style={
               props.routeName !== 'Generator' ? styles.textOff : styles.textOn
             }>
-            Generator
+            Sync
           </Text>
         </View>
         <View

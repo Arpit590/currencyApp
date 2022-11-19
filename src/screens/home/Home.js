@@ -119,21 +119,21 @@ const HomeScreen = () => {
   const modalHandler = item => {
     setModal(true);
     setHandlerKey(item?.id);
-    Animated.timing(value, {
-      toValue: 180,
-      duration: 1500,
-      useNativeDriver: false,
-    }).start();
+    // Animated.timing(value, {
+    //   toValue: 180,
+    //   duration: 1500,
+    //   useNativeDriver: false,
+    // }).start();
   };
 
   const modalHandler1 = item => {
     setModal(false);
     setHandlerKey(null);
-    Animated.timing(value, {
-      toValue: 0,
-      duration: 1500,
-      useNativeDriver: false,
-    }).start();
+    // Animated.timing(value, {
+    //   toValue: 0,
+    //   duration: 1500,
+    //   useNativeDriver: false,
+    // }).start();
   };
 
   return (
@@ -200,10 +200,12 @@ const HomeScreen = () => {
                         ...styles.box,
                         marginHorizontal: index === handlerKey ? 30 : 0,
                         borderWidth: index === handlerKey ? 1 : 0,
-                        borderColor: index === handlerKey ? '#DBD9D1' : '#DBD9D1',
+                        borderColor:
+                          index === handlerKey ? '#DBD9D1' : '#DBD9D1',
                         paddingHorizontal: index === handlerKey ? 5 : 35,
                         borderTopEndRadius: 12,
                         borderTopStartRadius: 12,
+                        marginTop: index === handlerKey ? 5 : 0,
                       }}>
                       <View style={styles.boxContainer}>
                         <Image source={item.imgUri} style={styles.boxImage} />
@@ -236,11 +238,11 @@ const HomeScreen = () => {
                       )}
                     </TouchableOpacity>
                     {index === handlerKey ? (
-                      <Animated.View
+                      <View
                         style={[
                           styles.view4,
                           {
-                            height: value,
+                            // height: value,
                             display: modal === false ? 'none' : 'flex',
                           },
                         ]}>
@@ -292,7 +294,7 @@ const HomeScreen = () => {
                             </View>
                           </>
                         )}
-                      </Animated.View>
+                      </View>
                     ) : null}
                   </View>
                 </>
