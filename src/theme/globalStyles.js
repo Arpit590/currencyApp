@@ -8,6 +8,9 @@ export const ThemeColors = {
   white: '#FFFFFF',
   grey: '#94928C',
   lightYellow: '#FFFCEC',
+  brown: '#362E00',
+  grey1: '#BBBAB3',
+  white1: '#DBD9D1',
 };
 
 export const FontSizes = {
