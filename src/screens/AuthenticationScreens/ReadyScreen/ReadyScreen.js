@@ -10,10 +10,9 @@ import {useNavigation} from '@react-navigation/native';
 
 const ReadyScreen = () => {
   const navigation = useNavigation();
-  const [openModal, setOpenModal] = useState(false);
 
-  const fingerPrintHandler = () => {
-    setOpenModal(true);
+  const homeHandler = () => {
+    navigation.navigate("Navigation");
   };
 
   return (
@@ -29,27 +28,10 @@ const ReadyScreen = () => {
       </View>
       <View style={styles.view2}>
         <PrimaryButton
-          title="Add your Fingerprint"
-          buttonHandler={fingerPrintHandler}
-        />
-        <Text style={{marginBottom: 0}}></Text>
-        <SecondaryButton
-          title="Skip for now"
-          buttonHandler={() => navigation.navigate('Navigation')}
+          title="Go to Home"
+          buttonHandler={homeHandler}
         />
       </View>
-      <ModalView openModal={openModal} onClose={() => setOpenModal(false)}>
-        <View style={styles.modal}>
-          <Text style={styles.heading}>Confirm FingerPrint</Text>
-          <View style={{marginTop: 20}}></View>
-          <TouchableOpacity
-            activeOpacity={0.8}
-            onPress={() => setOpenModal(false)}
-            style={styles.cancel}>
-            <Text style={styles.heading}>Cancel</Text>
-          </TouchableOpacity>
-        </View>
-      </ModalView>
     </View>
   );
 };

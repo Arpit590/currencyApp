@@ -13,3 +13,5 @@ export {default as Profile_Icon_On} from './svg/Profile_Icon_On.svg';
 export {default as BottomTab_Icon} from './svg/BottomTab_Icon.svg';
 
 export {default as Plus_Icon} from './svg/Plus_Icon.svg';
+
+export {default as Refresh} from './Refresh.svg';
