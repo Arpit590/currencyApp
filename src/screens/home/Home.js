@@ -196,7 +196,15 @@ const HomeScreen = () => {
                           : modalHandler1(item);
                       }}
                       key={item.id}
-                      style={styles.box}>
+                      style={{
+                        ...styles.box,
+                        marginHorizontal: index === handlerKey ? 30 : 0,
+                        borderWidth: index === handlerKey ? 1 : 0,
+                        borderColor: index === handlerKey ? '#DBD9D1' : '#DBD9D1',
+                        paddingHorizontal: index === handlerKey ? 5 : 35,
+                        borderTopEndRadius: 12,
+                        borderTopStartRadius: 12,
+                      }}>
                       <View style={styles.boxContainer}>
                         <Image source={item.imgUri} style={styles.boxImage} />
                         <View style={styles.boxTextContainer}>
@@ -255,7 +263,7 @@ const HomeScreen = () => {
                               </View>
                               <ForwardIcon />
                             </View>
-                            <View style={[styles.view5, {marginTop: 20}]}>
+                            <View style={[styles.view5, {marginBottom: 10}]}>
                               <View
                                 style={{
                                   flexDirection: 'row',
