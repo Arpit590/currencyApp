@@ -35,6 +35,8 @@ import LoginsMain from './screens/home/Logins/LoginsMain/LoginsMain';
 import BankAccount from './screens/home/Finance/BankAccount/BankAccount';
 import Lender from './screens/home/Finance/Lender/Lender';
 import CryptoWallet from './screens/home/Finance/CryptoWallet/CryptoWallet';
+import Cards from './screens/home/Finance/Cards/Cards';
+import BankAccountMain from './screens/explore/Finance/BankAccount/BankAccountMain';
 
 const Stack = createNativeStackNavigator();
 
@@ -79,8 +81,10 @@ export default function Main() {
         <Stack.Screen name="Logins" component={LoginsMain}/>
         <Stack.Screen name="BankAccounts" component={BankAccount}/>
         <Stack.Screen name="Lender" component={Lender}/>
+        <Stack.Screen name="Cards" component={Cards}/>
         <Stack.Screen name="CryptoWallet" component={CryptoWallet}/>
         <Stack.Screen name="GeneratorScreen" component={GeneratorScreen} />
+        <Stack.Screen name="BankAccountMain" component={BankAccountMain}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

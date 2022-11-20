@@ -17,13 +17,31 @@ import ImagesIcon from "../../assets/Images.svg";
 import DocumentIcon from "../../assets/Documents.svg";
 import AudioIcon from "../../assets/Audio.svg";
 import ArrowRightIcon from '../../assets/ArrowRight.svg';
+import WRIcon from "../../assets/WR.svg";
+import FAIcon from "../../assets/2FA.svg";
+import PasswordsIcon from "../../assets/Passwords.svg";
+import TaxIcon from "../../assets/Tax.svg";
+import DLIcon from "../../assets/DL.svg";
+import PassportIcon from "../../assets/Passport.svg";
+import MemberIcon from "../../assets/Member.svg";
+import TourIcon from "../../assets/Tour.svg";
+import InsuranceIcon from "../../assets/Insurance.svg";
+import InvoiceIcon from "../../assets/Invoice.svg";
+import CertificateIcon from "../../assets/Certificate.svg";
+import MedicalIcon from "../../assets/Medical.svg";
+import BAIcon from "../../assets/BA.svg";
+import CryptoIcon from "../../assets/Crypto.svg";
+import CardsIcon from "../../assets/Cards.svg";
+import LedgerIcon from "../../assets/Ledger.svg";
 import { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 const {width} = Dimensions.get("window");
 
 
 const Explore = () => {
 
+  const navigation = useNavigation();
   const value = useState(new Animated.Value(0))[0];
   const value1 = useState(new Animated.Value(0))[0];
   const value2 = useState(new Animated.Value(0))[0];
@@ -178,7 +196,7 @@ const Explore = () => {
         </View>
       </View>
       <View style={styles.view1}>
-          <ScrollView showsVerticalScrollIndicator={false} style={{alignSelf:"center", width:width, marginBottom:50}}>
+          <ScrollView showsVerticalScrollIndicator={false} style={{alignSelf:"center", width:width, marginBottom:100}}>
             <View
             style={styles.container}>
               <View style={styles.content}>
@@ -200,21 +218,21 @@ const Explore = () => {
             <Animated.View style={[styles.modal, {height:value, display:modal ? "flex" : "none"}]}>
               <TouchableOpacity activeOpacity={0.8} style={styles.modalContent}>
                 <View style={styles.logo}>
-                  <AudioIcon/>
+                  <PasswordsIcon/>
                 </View>
-                <Text style={styles.text}>Audio</Text>
+                <Text style={styles.text}>Passwords</Text>
               </TouchableOpacity>
               <TouchableOpacity activeOpacity={0.8} style={styles.modalContent}>
                 <View style={styles.logo}>
-                  <ImagesIcon/>
+                  <FAIcon/>
                 </View>
-                <Text style={styles.text}>Images</Text>
+                <Text style={styles.text}>2 FAs</Text>
               </TouchableOpacity>
               <TouchableOpacity activeOpacity={0.8} style={styles.modalContent}>
                 <View style={styles.logo}>
-                  <DocumentIcon/>
+                  <WRIcon/>
                 </View>
-                <Text style={styles.text}>Documents</Text>
+                <Text style={styles.text}>Wifi Router</Text>
               </TouchableOpacity>
             </Animated.View>
             <View style={styles.container}>
@@ -235,29 +253,49 @@ const Explore = () => {
               }
             </View>
             <Animated.View style={[styles.modal, {height:value1, display:modal1 ? "flex" : "none"}]}>
+              <ScrollView showsHorizontalScrollIndicator={false} horizontal>
               <TouchableOpacity activeOpacity={0.8} style={styles.modalContent}>
                 <View style={styles.logo}>
-                  <AudioIcon/>
+                  <IdentityIcon/>
                 </View>
-                <Text style={styles.text}>Audio</Text>
+                <Text style={styles.text}>ID Cards</Text>
               </TouchableOpacity>
               <TouchableOpacity activeOpacity={0.8} style={styles.modalContent}>
                 <View style={styles.logo}>
-                  <ImagesIcon/>
+                  <TaxIcon/>
                 </View>
-                <Text style={styles.text}>Images</Text>
+                <Text style={styles.text}>Tax</Text>
               </TouchableOpacity>
               <TouchableOpacity activeOpacity={0.8} style={styles.modalContent}>
                 <View style={styles.logo}>
-                  <DocumentIcon/>
+                  <PassportIcon/>
                 </View>
-                <Text style={styles.text}>Documents</Text>
+                <Text style={styles.text}>Passports</Text>
               </TouchableOpacity>
+              <TouchableOpacity activeOpacity={0.8} style={styles.modalContent}>
+                <View style={styles.logo}>
+                  <DLIcon/>
+                </View>
+                <Text style={styles.text}>Driving License</Text>
+              </TouchableOpacity>
+              <TouchableOpacity activeOpacity={0.8} style={styles.modalContent}>
+                <View style={styles.logo}>
+                  <TourIcon/>
+                </View>
+                <Text style={styles.text}>Tour Visa</Text>
+              </TouchableOpacity>
+              <TouchableOpacity activeOpacity={0.8} style={styles.modalContent}>
+                <View style={styles.logo}>
+                  <MemberIcon/>
+                </View>
+                <Text style={styles.text}>Membership</Text>
+              </TouchableOpacity>
+              </ScrollView>
             </Animated.View>
             <View style={styles.container}>
               <View style={styles.content}>
                 <View style={styles.logo}>
-                  <FinanceIcon/>
+                  <DLIcon/>
                 </View>
                 <Text style={styles.contentText}>Finance</Text>
               </View>
@@ -272,24 +310,34 @@ const Explore = () => {
               }
             </View>
             <Animated.View style={[styles.modal, {height:value2, display:modal2 ? "flex" : "none"}]}>
-              <TouchableOpacity activeOpacity={0.8} style={styles.modalContent}>
-                <View style={styles.logo}>
-                  <AudioIcon/>
-                </View>
-                <Text style={styles.text}>Audio</Text>
-              </TouchableOpacity>
-              <TouchableOpacity activeOpacity={0.8} style={styles.modalContent}>
-                <View style={styles.logo}>
-                  <ImagesIcon/>
-                </View>
-                <Text style={styles.text}>Images</Text>
-              </TouchableOpacity>
-              <TouchableOpacity activeOpacity={0.8} style={styles.modalContent}>
-                <View style={styles.logo}>
-                  <DocumentIcon/>
-                </View>
-                <Text style={styles.text}>Documents</Text>
-              </TouchableOpacity>
+              <ScrollView showsHorizontalScrollIndicator={false} horizontal>
+                <TouchableOpacity
+                onPress={()=>navigation.navigate("BankAccountMain")}
+                activeOpacity={0.8} style={styles.modalContent}>
+                  <View style={styles.logo}>
+                    <BAIcon/>
+                  </View>
+                  <Text style={styles.text}>Bank Account</Text>
+                </TouchableOpacity>
+                <TouchableOpacity activeOpacity={0.8} style={styles.modalContent}>
+                  <View style={styles.logo}>
+                    <CardsIcon/>
+                  </View>
+                  <Text style={styles.text}>Cards</Text>
+                </TouchableOpacity>
+                <TouchableOpacity activeOpacity={0.8} style={styles.modalContent}>
+                  <View style={styles.logo}>
+                    <CryptoIcon/>
+                  </View>
+                  <Text style={styles.text}>Crypto Wallet</Text>
+                </TouchableOpacity>
+                <TouchableOpacity activeOpacity={0.8} style={styles.modalContent}>
+                  <View style={styles.logo}>
+                    <LedgerIcon/>
+                  </View>
+                  <Text style={styles.text}>Lender</Text>
+                </TouchableOpacity>
+              </ScrollView>
             </Animated.View>
             <View style={styles.container}>
               <View style={styles.content}>
@@ -298,36 +346,10 @@ const Explore = () => {
                 </View>
                 <Text style={styles.contentText}>Notes</Text>
               </View>
-              {(modal3===false) ? 
-              <TouchableOpacity activeOpacity={0.8} onPress={modalHandler3}>
+              <TouchableOpacity activeOpacity={0.8} onPress={()=>{}}>
                 <ArrowDownIcon1/>
               </TouchableOpacity>
-              :
-              <TouchableOpacity activeOpacity={0.8} onPress={modalCloseHandler3}>
-                <ArrowRightIcon/>
-              </TouchableOpacity>
-              }
             </View>
-            <Animated.View style={[styles.modal, {height:value3, display:modal3 ? "flex" : "none"}]}>
-              <TouchableOpacity activeOpacity={0.8} style={styles.modalContent}>
-                <View style={styles.logo}>
-                  <AudioIcon/>
-                </View>
-                <Text style={styles.text}>Audio</Text>
-              </TouchableOpacity>
-              <TouchableOpacity activeOpacity={0.8} style={styles.modalContent}>
-                <View style={styles.logo}>
-                  <ImagesIcon/>
-                </View>
-                <Text style={styles.text}>Images</Text>
-              </TouchableOpacity>
-              <TouchableOpacity activeOpacity={0.8} style={styles.modalContent}>
-                <View style={styles.logo}>
-                  <DocumentIcon/>
-                </View>
-                <Text style={styles.text}>Documents</Text>
-              </TouchableOpacity>
-            </Animated.View>
             <View style={styles.container}>
               <View style={styles.content}>
                 <View style={styles.logo}>
@@ -372,28 +394,10 @@ const Explore = () => {
                 </View>
                 <Text style={styles.contentText}>Contacts</Text>
               </View>
-              <ArrowDownIcon1/>
+              <TouchableOpacity activeOpacity={0.8} onPress={()=>{}}>
+                <ArrowDownIcon1/>
+              </TouchableOpacity>
             </View>
-            <Animated.View style={[styles.modal, {height:value3, display:modal3 ? "flex" : "none"}]}>
-              <TouchableOpacity activeOpacity={0.8} style={styles.modalContent}>
-                <View style={styles.logo}>
-                  <AudioIcon/>
-                </View>
-                <Text style={styles.text}>Audio</Text>
-              </TouchableOpacity>
-              <TouchableOpacity activeOpacity={0.8} style={styles.modalContent}>
-                <View style={styles.logo}>
-                  <ImagesIcon/>
-                </View>
-                <Text style={styles.text}>Images</Text>
-              </TouchableOpacity>
-              <TouchableOpacity activeOpacity={0.8} style={styles.modalContent}>
-                <View style={styles.logo}>
-                  <DocumentIcon/>
-                </View>
-                <Text style={styles.text}>Documents</Text>
-              </TouchableOpacity>
-            </Animated.View>
             <TouchableOpacity activeOpacity={0.8} style={styles.container}>
               <View style={styles.content}>
                 <View style={styles.logo}>
@@ -401,7 +405,9 @@ const Explore = () => {
                 </View>
                 <Text style={styles.contentText}>BookMarks</Text>
               </View>
-              <ArrowDownIcon1/>
+              <TouchableOpacity activeOpacity={0.8} onPress={()=>{}}>
+                <ArrowDownIcon1/>
+              </TouchableOpacity>
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={0.8} style={styles.container}>
               <View style={styles.content}>
@@ -410,8 +416,44 @@ const Explore = () => {
                 </View>
                 <Text style={styles.contentText}>Records</Text>
               </View>
-              <ArrowDownIcon1/>
+              {(modal6===false) ? 
+              <TouchableOpacity activeOpacity={0.8} onPress={modalHandler6}>
+                <ArrowDownIcon1/>
+              </TouchableOpacity>
+              :
+              <TouchableOpacity activeOpacity={0.8} onPress={modalCloseHandler6}>
+                <ArrowRightIcon/>
+              </TouchableOpacity>
+              }
             </TouchableOpacity>
+            <Animated.View style={[styles.modal, {height:value6, display:modal6 ? "flex" : "none"}]}>
+              <ScrollView showsHorizontalScrollIndicator={false} horizontal>
+                <TouchableOpacity activeOpacity={0.8} style={styles.modalContent}>
+                  <View style={styles.logo}>
+                    <MedicalIcon/>
+                  </View>
+                  <Text style={styles.text}>Medical</Text>
+                </TouchableOpacity>
+                <TouchableOpacity activeOpacity={0.8} style={styles.modalContent}>
+                  <View style={styles.logo}>
+                    <InsuranceIcon/>
+                  </View>
+                  <Text style={styles.text}>Insurance</Text>
+                </TouchableOpacity>
+                <TouchableOpacity activeOpacity={0.8} style={styles.modalContent}>
+                  <View style={styles.logo}>
+                    <CertificateIcon/>
+                  </View>
+                  <Text style={styles.text}>Certificate</Text>
+                </TouchableOpacity>
+                <TouchableOpacity activeOpacity={0.8} style={styles.modalContent}>
+                  <View style={styles.logo}>
+                    <InvoiceIcon/>
+                  </View>
+                  <Text style={styles.text}>Invoice</Text>
+                </TouchableOpacity>
+              </ScrollView>
+            </Animated.View>
           </ScrollView>
         </View>
     </View>
