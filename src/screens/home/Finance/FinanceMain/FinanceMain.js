@@ -44,7 +44,7 @@ const FinanceMain = () => {
                 <Text style={styles.text}>Cards</Text>
             </View>
             <TouchableOpacity
-            onPress={()=>navigation.navigate("Tax")}
+            onPress={()=>navigation.navigate("Cards")}
             activeOpacity={0.8}>
                 <AddIcon/>
             </TouchableOpacity>

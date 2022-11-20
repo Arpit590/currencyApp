@@ -35,6 +35,47 @@ import LoginsMain from './screens/home/Logins/LoginsMain/LoginsMain';
 import BankAccount from './screens/home/Finance/BankAccount/BankAccount';
 import Lender from './screens/home/Finance/Lender/Lender';
 import CryptoWallet from './screens/home/Finance/CryptoWallet/CryptoWallet';
+import Cards from './screens/home/Finance/Cards/Cards';
+import BankAccountMain from './screens/explore/Finance/BankAccountMainScreens/BankAccount/BankAccountMain';
+import BankAccountEdit from './screens/explore/Finance/BankAccountMainScreens/BankAccountEditScreens/BankAccountEdit';
+import CardsMainScreen from './screens/explore/Finance/CardsMainScreens/CardsScreen/CardsScreen';
+import CardsEditScreen from './screens/explore/Finance/CardsMainScreens/CardsEditScreens/CardsEditScreen';
+import CryptoMainScreen from './screens/explore/Finance/CryptoMainScreens/CrpytoScreens/CryptoMainScreen';
+import CryptoEditScreen from './screens/explore/Finance/CryptoMainScreens/CryptoEditScreens/CryptoEditScreen';
+import IDCardsMain from './screens/explore/Identity/IDCardsScreen/IDCardsMain/IDCardsMain';
+import IDCardsEditScreen from './screens/explore/Identity/IDCardsScreen/IDCardsEditScreen/IDCardsEditScreen';
+import TaxMainScreen from './screens/explore/Identity/TaxScreens/TaxMainScreens/TaxMainScreen';
+import TaxEditScreen from './screens/explore/Identity/TaxScreens/TaxEditScreens/TaxEditScreen';
+import PassportMainScreen from './screens/explore/Identity/PassportScreens/PassportMainScreens/PassportMainScreen';
+import PassportEditScreen from './screens/explore/Identity/PassportScreens/PassportEditScreens/PassportEditScreen';
+import DrivingLicenseMain from './screens/explore/Identity/DrivingLicense/DrivingLicenseMain/DrivingLicenseMain';
+import DrivingLicenseEdit from './screens/explore/Identity/DrivingLicense/DrivingLicenseEdit/DrivingLicenseEdit';
+import TourVisaMain from './screens/explore/Identity/TourVisa/TourVisaMain/TourVisaMain';
+import TourVisaEdit from './screens/explore/Identity/TourVisa/TourVisaEdit/TourVisaEdit';
+import MembershipMain from './screens/explore/Identity/Membership/MembershipMain/MembershipMain';
+import MembershipEdit from './screens/explore/Identity/Membership/MembershipEdit/MembershipEdit';
+import AudioMain from './screens/explore/Files/Audio/AudioMainScreen/AudioMain';
+import AudioView from './screens/explore/Files/Audio/AudioView/AudioView';
+import ImagesMain from './screens/explore/Files/Images/ImagesMain/ImagesMain';
+import ImagesView from './screens/explore/Files/Images/ImagesView/ImagesView';
+import DocumentMain from './screens/explore/Files/Documents/DocumentsMain/DocumentMain';
+import DocumentView from './screens/explore/Files/Documents/DocumentsView/DocumentsView';
+import NotesMain from './screens/explore/Notes/NotesMain/NotesMain';
+import NotesEdit from './screens/explore/Notes/NotesEdit/NotesEdit';
+import BookMarksMain from './screens/explore/BookMarks/BookMarksMain/BookMarksMain';
+import BookMarksEdit from './screens/explore/BookMarks/BookMarksEdit/BookMarksEdit';
+import ContactMain from './screens/explore/Contacts/ContactsMain/ContactMain';
+import ContactsEdit from './screens/explore/Contacts/ContactsEdit/ContactsEdit';
+import MedicalMain from './screens/explore/Records/Medical/MedicalMain/MedicalMain';
+import MedicalEdit from './screens/explore/Records/Medical/MedicalEdit/MedicalEdit';
+import InsuranceMain from './screens/explore/Records/Insurance/InsuraceMain/InsuranceMain';
+import InsuranceEdit from './screens/explore/Records/Insurance/InsuranceEdit/InsuranceEdit';
+import CertificateMain from './screens/explore/Records/Certificate/CertificateMain/CertificateMain';
+import CertificateEdit from './screens/explore/Records/Certificate/CertificateEdit/CertificateEdit';
+import PasswordsMain from './screens/explore/Logins/Passwords/PasswordsMain/PasswordsMain';
+import PasswordsEdit from './screens/explore/Logins/Passwords/PasswordsEdit/PassWordsEdit';
+import GeneratePassword from './screens/explore/Logins/Passwords/GeneratePasswords/GeneratePassword';
+import WifiRoutersMain from './screens/explore/Logins/WifiRouters/WifiRoutersMain/WifiRoutersMain';
 
 const Stack = createNativeStackNavigator();
 
@@ -84,6 +125,58 @@ export default function Main() {
         <Stack.Screen name="Lender" component={Lender} />
         <Stack.Screen name="CryptoWallet" component={CryptoWallet} />
         <Stack.Screen name="GeneratorScreen" component={GeneratorScreen} />
+        <Stack.Screen name="BankAccountMain" component={BankAccountMain} />
+        <Stack.Screen name="BankAccountEdit" component={BankAccountEdit} />
+        <Stack.Screen name="CardsMainScreen" component={CardsMainScreen} />
+        <Stack.Screen name="CardsEditScreen" component={CardsEditScreen} />
+        <Stack.Screen name="CryptoMainScreen" component={CryptoMainScreen} />
+        <Stack.Screen name="CryptoEditScreen" component={CryptoEditScreen} />
+        <Stack.Screen name="IDCardsMain" component={IDCardsMain} />
+        <Stack.Screen name="IDCardsEdit" component={IDCardsEditScreen} />
+        <Stack.Screen name="TaxMainScreen" component={TaxMainScreen} />
+        <Stack.Screen name="TaxEditScreen" component={TaxEditScreen} />
+        <Stack.Screen
+          name="PassportMainScreen"
+          component={PassportMainScreen}
+        />
+        <Stack.Screen
+          name="PassportEditScreen"
+          component={PassportEditScreen}
+        />
+        <Stack.Screen
+          name="DrivingLicenseMain"
+          component={DrivingLicenseMain}
+        />
+        <Stack.Screen
+          name="DrivingLicenseEdit"
+          component={DrivingLicenseEdit}
+        />
+        <Stack.Screen name="TourVisaMain" component={TourVisaMain} />
+        <Stack.Screen name="TourVisaEdit" component={TourVisaEdit} />
+        <Stack.Screen name="MembershipMain" component={MembershipMain} />
+        <Stack.Screen name="MembershipEdit" component={MembershipEdit} />
+        <Stack.Screen name="AudioMain" component={AudioMain} />
+        <Stack.Screen name="AudioView" component={AudioView} />
+        <Stack.Screen name="ImagesMain" component={ImagesMain} />
+        <Stack.Screen name="ImagesView" component={ImagesView} />
+        <Stack.Screen name="DocumentMain" component={DocumentMain} />
+        <Stack.Screen name="DocumentView" component={DocumentView} />
+        <Stack.Screen name="NotesMain" component={NotesMain} />
+        <Stack.Screen name="NotesEdit" component={NotesEdit} />
+        <Stack.Screen name="BookMarksMain" component={BookMarksMain} />
+        <Stack.Screen name="BookMarksEdit" component={BookMarksEdit} />
+        <Stack.Screen name="ContactMain" component={ContactMain} />
+        <Stack.Screen name="ContactEdit" component={ContactsEdit} />
+        <Stack.Screen name="MedicalMain" component={MedicalMain} />
+        <Stack.Screen name="MedicalEdit" component={MedicalEdit} />
+        <Stack.Screen name="InsuranceMain" component={InsuranceMain} />
+        <Stack.Screen name="InsuranceEdit" component={InsuranceEdit} />
+        <Stack.Screen name="CertificateMain" component={CertificateMain} />
+        <Stack.Screen name="CertificateEdit" component={CertificateEdit} />
+        <Stack.Screen name="PasswordsMain" component={PasswordsMain} />
+        <Stack.Screen name="PasswordsEdit" component={PasswordsEdit} />
+        <Stack.Screen name="GeneratePassword" component={GeneratePassword} />
+        <Stack.Screen name="WifiRoutersMain" component={WifiRoutersMain} />
       </Stack.Navigator>
     </NavigationContainer>
   );
