@@ -1,111 +1,129 @@
-import { ScrollView, StyleSheet, Switch, Text, TextInput, TouchableOpacity, View } from 'react-native'
-import React, { useState } from 'react';
+import React, {useState} from 'react';
+import {View, Text, TextInput, TouchableOpacity, Switch} from 'react-native';
+import {Slider} from '@miblanchard/react-native-slider';
+import {Refresh} from '../../../../../assets';
 import styles from './styles';
-import { useNavigation, useRoute } from '@react-navigation/native';
-import BackIcon from "../../../../../assets/Back.svg"; 
-import ArrowDownIcon from "../../../../../assets/ArrowDown.svg";
-import RefreshIcon from "../../../../../assets/Refresh.svg";
-import DatePicker from 'react-native-date-picker';
-import PrimaryButton from "../../../../../Atoms/PrimaryButton";
-import CalendarIcon from "../../../../../assets/Line.svg";
-import { FontFamily, ThemeColors } from '../../../../../theme';
+import {ThemeColors} from '../../../../../theme';
+import BackIcon from '../../../../../assets/Back.svg';
+import {useNavigation} from '@react-navigation/native';
 
+const GeneratorScreen = () => {
+  const navigation = useNavigation();
+  const [state, setState] = useState({
+    sliderValue: 25,
+    isEnabled: true,
+    isEnabled1: true,
+    isEnabled2: true,
+    isEnabled3: true,
+  });
 
-const GeneratePassword = () => {
-
-    const navigation = useNavigation();
-    const route = useRoute();
-    const [letters, setLetters] = useState(false);
-    const [symbols, setSymbols] = useState(false);
-    const [characters, setCharacters] = useState(false);
-    const [digits, setDigits] = useState(false);
-
+  const toggleSwitch = () =>
+    setState(prev => ({
+      ...prev,
+      isEnabled: !state.isEnabled,
+    }));
+  const toggleSwitch1 = () =>
+    setState(prev => ({
+      ...prev,
+      isEnabled1: !state.isEnabled1,
+    }));
+  const toggleSwitch2 = () =>
+    setState(prev => ({
+      ...prev,
+      isEnabled2: !state.isEnabled2,
+    }));
+  const toggleSwitch3 = () =>
+    setState(prev => ({
+      ...prev,
+      isEnabled3: !state.isEnabled3,
+    }));
   return (
     <View style={styles.screen}>
-      <View style={styles.view}>
-        <TouchableOpacity activeOpacity={0.8} onPress={()=>navigation.goBack()}>
-            <BackIcon/>
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}>
+        <TouchableOpacity
+          activeOpacity={0.8}
+          onPress={() => navigation.goBack()}>
+          <BackIcon />
         </TouchableOpacity>
-        <Text style={styles.heading}>{"Generator"}</Text>
-        <View></View>
+        <Text style={styles.headerTxt}>Generator</Text>
+        <View />
       </View>
-      <ScrollView showsVerticalScrollIndicator={false} style={styles.view1}>
-        <View style={styles.formContent}>
-            <Text style={styles.formText}>Password Name</Text>
-            <View style={styles.input}>
-              <TextInput
-              placeholder='Password Name'
-              placeholderTextColor="#BBBAB3"
-              style={styles.inputText}
-              />
-              <TouchableOpacity activeOpacity={0.8}>
-                <RefreshIcon/>
-              </TouchableOpacity>
-            </View>
+
+      <View>
+        <View style={styles.passwordContainer}>
+          <Text style={styles.txtStyle}>Password Name</Text>
+          <View style={styles.txtInputContainer}>
+            <TextInput value="ajauehu283718o@3981%$9`26" />
+            <TouchableOpacity>
+              <Refresh />
+            </TouchableOpacity>
+          </View>
         </View>
-        <View style={[styles.formContent, {flexDirection:"row", alignItems:"center", justifyContent:"space-between", marginTop:20}]}>
-            <Text style={[styles.formText, {color:ThemeColors.textPrimary, fontFamily:FontFamily.secondaryRegular, marginBottom:0}]}>Digits</Text>
-            <Switch
-                id="Digits"
-                trackColor={{ false: "#DBD9D1", true: "#FFD700" }}
-                thumbColor={"#DBD9D1"}
-                ios_backgroundColor="#DBD9D1"
-                onValueChange={() => {
-                  setDigits(!digits);
-                }}
-                value={digits}
-              />
-        </View>
-        <View style={[styles.formContent, {flexDirection:"row", alignItems:"center", justifyContent:"space-between"}]}>
-            <Text style={[styles.formText, {color:ThemeColors.textPrimary, fontFamily:FontFamily.secondaryRegular, marginBottom:0}]}>Letters</Text>
-            <Switch
-                id="Letters"
-                trackColor={{ false: "#DBD9D1", true: "#FFD700" }}
-                thumbColor={"#DBD9D1"}
-                ios_backgroundColor="#DBD9D1"
-                onValueChange={() => {
-                  setLetters(!letters);
-                }}
-                value={letters}
-              />
-        </View>
-        <View style={[styles.formContent, {flexDirection:"row", alignItems:"center", justifyContent:"space-between"}]}>
-            <Text style={[styles.formText, {color:ThemeColors.textPrimary, fontFamily:FontFamily.secondaryRegular, marginBottom:0}]}>Symbols</Text>
-            <Switch
-                id="Symbols"
-                trackColor={{ false: "#DBD9D1", true: "#FFD700" }}
-                thumbColor={"#DBD9D1"}
-                ios_backgroundColor="#DBD9D1"
-                onValueChange={() => {
-                  setSymbols(!symbols);
-                }}
-                value={symbols}
-              />
-        </View>
-        <View style={[styles.formContent, {flexDirection:"row", alignItems:"center", justifyContent:"space-between"}]}>
-            <Text style={[styles.formText, {color:ThemeColors.textPrimary, fontFamily:FontFamily.secondaryRegular, marginBottom:0}]}>Characters</Text>
-            <Switch
-                id="Characters"
-                trackColor={{ false: "#DBD9D1", true: "#FFD700" }}
-                thumbColor={"#DBD9D1"}
-                ios_backgroundColor="#DBD9D1"
-                onValueChange={() => {
-                  setCharacters(!characters);
-                }}
-                value={characters}
-              />
-        </View>
-      </ScrollView>
-      <View style={{marginHorizontal:20}}>
-        <PrimaryButton
-        title="Use This Password"
-        buttonHandler={()=>{
-            navigation.goBack()
-        }}
+        <Text style={styles.txtStyle}>
+          Length: {parseInt(state?.sliderValue, 10)}
+        </Text>
+        <Slider
+          value={state.sliderValue}
+          minimumValue={1}
+          maximumValue={30}
+          thumbTintColor={ThemeColors.white1}
+          trackStyle={{backgroundColor: ThemeColors.white1}}
+          thumbStyle={styles.indicatorStyle}
+          onValueChange={value =>
+            setState(prev => ({
+              ...prev,
+              sliderValue: value,
+            }))
+          }
         />
+        <View style={styles.switchContainer}>
+          <Text style={styles.txtStyleToggle}>Digits</Text>
+          <Switch
+            trackColor={{false: '#767577', true: '#FFFCEC'}}
+            thumbColor={state.isEnabled ? '#FFD700' : '#f4f3f4'}
+            ios_backgroundColor="#3e3e3e"
+            onValueChange={toggleSwitch}
+            value={state.isEnabled}
+          />
+        </View>
+        <View style={styles.switchContainer}>
+          <Text style={styles.txtStyleToggle}>Letters</Text>
+          <Switch
+            trackColor={{false: '#767577', true: '#FFFCEC'}}
+            thumbColor={state.isEnabled1 ? '#FFD700' : '#f4f3f4'}
+            ios_backgroundColor="#3e3e3e"
+            onValueChange={toggleSwitch1}
+            value={state.isEnabled1}
+          />
+        </View>
+        <View style={styles.switchContainer}>
+          <Text style={styles.txtStyleToggle}>Symbols</Text>
+          <Switch
+            trackColor={{false: '#767577', true: '#FFFCEC'}}
+            thumbColor={state.isEnabled2 ? '#FFD700' : '#f4f3f4'}
+            ios_backgroundColor="#3e3e3e"
+            onValueChange={toggleSwitch2}
+            value={state.isEnabled2}
+          />
+        </View>
+        <View style={styles.switchContainer}>
+          <Text style={styles.txtStyleToggle}>Similar Characters</Text>
+          <Switch
+            trackColor={{false: '#767577', true: '#FFFCEC'}}
+            thumbColor={state.isEnabled3 ? '#FFD700' : '#f4f3f4'}
+            ios_backgroundColor="#3e3e3e"
+            onValueChange={toggleSwitch3}
+            value={state.isEnabled3}
+          />
+        </View>
       </View>
     </View>
-  )
-}
+  );
+};
 
-export default GeneratePassword
+export default GeneratorScreen;

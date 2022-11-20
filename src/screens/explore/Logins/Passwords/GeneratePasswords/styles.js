@@ -1,73 +1,60 @@
 import {Dimensions, StyleSheet} from 'react-native';
-import { FontFamily, FontSizes, ThemeColors } from '../../../../../theme/globalStyles';
-
-const {width, height} = Dimensions.get("window")
+import {
+  FontFamily,
+  FontSizes,
+  ThemeColors,
+  MetricsSizes,
+  FontWeight,
+} from '../../../../../theme';
 
 const styles = StyleSheet.create({
-    screen: {
-        flex: 1,
-        backgroundColor: "#FFFFFF",
-      },
-      view:{
-        padding:35,
-        flexDirection:"row",
-        alignItems:"center",
-        justifyContent:"space-between"
-      },
-      heading:{
-        fontFamily:FontFamily.primaryBold,
-        fontSize:FontSizes.hugeSS,
-        color:ThemeColors.textPrimary
-      },
-      view1:{
-        paddingHorizontal:35
-      },
-      formContent:{
-        marginBottom:15
-      },
-      formText:{
-        fontFamily:FontFamily.secondaryBold,
-        fontSize:FontSizes.smallX,
-        color:"#BBBAB3",
-        marginBottom:10
-      },
-      input:{
-        borderWidth:1,
-        borderRadius:10,
-        borderColor:"#BBBAB3",
-        paddingHorizontal:10,
-        flexDirection:"row",
-        alignItems:"center",
-        justifyContent:"space-between"
-      },
-      textarea:{
-        borderWidth:1,
-        borderRadius:10,
-        borderColor:"#BBBAB3",
-        paddingHorizontal:10,
-      },
-      inputText:{
-        fontFamily:FontFamily.secondaryRegular,
-        fontSize:FontSizes.normal,
-        color:ThemeColors.textPrimary,
-        flex:0.8
-      },
-      dropDown:{
-        borderWidth:1,
-        borderRadius:5,
-        borderColor:"#BBBAB3",
-      },
-      dropDownContent:{
-        borderBottomColor:"#BBBAB3",
-        borderBottomWidth:1,
-      },
-      dropDownText:{
-        fontSize:FontSizes.normal,
-        fontFamily:FontFamily.primaryRegular,
-        color:ThemeColors.textPrimary,
-        padding:10,
-        paddingVertical:5
-      }
-})
+  screen: {
+    flex: 1,
+    backgroundColor: '#FFFFFF',
+    padding: 35,
+  },
+  headerTxt: {
+    fontFamily: FontFamily.primaryBold,
+    fontSize: FontSizes.hugeSS,
+    color: ThemeColors.brown,
+    textAlign: 'center',
+  },
+  passwordContainer: {
+    paddingVertical: MetricsSizes.vs30,
+  },
+  txtStyle: {
+    fontSize: FontSizes.smallX,
+    fontFamily: FontFamily.secondaryRegular,
+    fontWeight: FontWeight.semibold,
+    color: ThemeColors.grey1,
+  },
+  txtInputContainer: {
+    height: MetricsSizes.vs48,
+    borderWidth: 1.2,
+    borderColor: ThemeColors.grey1,
+    borderRadius: 12,
+    paddingHorizontal: MetricsSizes.hs10,
+    marginTop: MetricsSizes.vs12,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  indicatorStyle: {
+    borderWidth: 2,
+    height: 15,
+    width: 15,
+  },
+  switchContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginVertical: 5,
+  },
+  txtStyleToggle: {
+    fontSize: FontSizes.normal,
+    fontFamily: FontFamily.secondaryRegular,
+    color: ThemeColors.brown,
+  },
+});
 
 export default styles;
