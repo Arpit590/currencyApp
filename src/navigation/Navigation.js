@@ -54,8 +54,8 @@ function Navigation() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor:"#FFFFFF",
-    elevation:5
+    backgroundColor: '#FFFFFF',
+    elevation: 5,
   },
   contentView: {
     width: '100%',

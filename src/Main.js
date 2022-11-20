@@ -102,67 +102,81 @@ export default function Main() {
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
         <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
         <Stack.Screen name="ExploreScreen" component={ExploreScreen} />
-        <Stack.Screen name="Identity" component={Identity}/>
-        <Stack.Screen name="Identity Details" component={IdentityDetailsScreen}/>
-        <Stack.Screen name="Tax" component={Tax}/>
-        <Stack.Screen name="DL" component={DL}/>
-        <Stack.Screen name="Passport" component={Passport}/>
-        <Stack.Screen name="Tour" component={Tour}/>
-        <Stack.Screen name="Membership" component={Membership}/>
-        <Stack.Screen name="Records" component={RecordsMain}/>
-        <Stack.Screen name="Medical Reports" component={MedicalReports}/>
-        <Stack.Screen name="Insurance" component={Insurance}/>
-        <Stack.Screen name="Certificate" component={Certificate}/>
-        <Stack.Screen name="Invoice" component={Invoice}/>
-        <Stack.Screen name="Files" component={Files}/>
-        <Stack.Screen name="Bookmarks" component={Bookmarks}/>
-        <Stack.Screen name="Finance" component={FinanceMain}/>
-        <Stack.Screen name="Logins" component={LoginsMain}/>
-        <Stack.Screen name="BankAccounts" component={BankAccount}/>
-        <Stack.Screen name="Lender" component={Lender}/>
-        <Stack.Screen name="Cards" component={Cards}/>
-        <Stack.Screen name="CryptoWallet" component={CryptoWallet}/>
+        <Stack.Screen name="Identity" component={Identity} />
+        <Stack.Screen
+          name="Identity Details"
+          component={IdentityDetailsScreen}
+        />
+        <Stack.Screen name="Tax" component={Tax} />
+        <Stack.Screen name="DL" component={DL} />
+        <Stack.Screen name="Passport" component={Passport} />
+        <Stack.Screen name="Tour" component={Tour} />
+        <Stack.Screen name="Membership" component={Membership} />
+        <Stack.Screen name="Records" component={RecordsMain} />
+        <Stack.Screen name="Medical Reports" component={MedicalReports} />
+        <Stack.Screen name="Insurance" component={Insurance} />
+        <Stack.Screen name="Certificate" component={Certificate} />
+        <Stack.Screen name="Invoice" component={Invoice} />
+        <Stack.Screen name="Files" component={Files} />
+        <Stack.Screen name="Bookmarks" component={Bookmarks} />
+        <Stack.Screen name="Finance" component={FinanceMain} />
+        <Stack.Screen name="Logins" component={LoginsMain} />
+        <Stack.Screen name="BankAccounts" component={BankAccount} />
+        <Stack.Screen name="Lender" component={Lender} />
+        <Stack.Screen name="CryptoWallet" component={CryptoWallet} />
         <Stack.Screen name="GeneratorScreen" component={GeneratorScreen} />
-        <Stack.Screen name="BankAccountMain" component={BankAccountMain}/>
-        <Stack.Screen name="BankAccountEdit" component={BankAccountEdit}/>
-        <Stack.Screen name="CardsMainScreen" component={CardsMainScreen}/>
-        <Stack.Screen name="CardsEditScreen" component={CardsEditScreen}/>
-        <Stack.Screen name="CryptoMainScreen" component={CryptoMainScreen}/>
-        <Stack.Screen name="CryptoEditScreen" component={CryptoEditScreen}/>
-        <Stack.Screen name="IDCardsMain" component={IDCardsMain}/>
-        <Stack.Screen name="IDCardsEdit" component={IDCardsEditScreen}/>
-        <Stack.Screen name="TaxMainScreen" component={TaxMainScreen}/>
-        <Stack.Screen name="TaxEditScreen" component={TaxEditScreen}/>
-        <Stack.Screen name="PassportMainScreen" component={PassportMainScreen}/>
-        <Stack.Screen name="PassportEditScreen" component={PassportEditScreen}/>
-        <Stack.Screen name="DrivingLicenseMain" component={DrivingLicenseMain}/>
-        <Stack.Screen name="DrivingLicenseEdit" component={DrivingLicenseEdit}/>
-        <Stack.Screen name="TourVisaMain" component={TourVisaMain}/>
-        <Stack.Screen name="TourVisaEdit" component={TourVisaEdit}/>
-        <Stack.Screen name="MembershipMain" component={MembershipMain}/>
-        <Stack.Screen name="MembershipEdit" component={MembershipEdit}/>
-        <Stack.Screen name="AudioMain" component={AudioMain}/>
-        <Stack.Screen name="AudioView" component={AudioView}/>
-        <Stack.Screen name="ImagesMain" component={ImagesMain}/>
-        <Stack.Screen name="ImagesView" component={ImagesView}/>
-        <Stack.Screen name="DocumentMain" component={DocumentMain}/>
-        <Stack.Screen name="DocumentView" component={DocumentView}/>
-        <Stack.Screen name="NotesMain" component={NotesMain}/>
-        <Stack.Screen name="NotesEdit" component={NotesEdit}/>
-        <Stack.Screen name="BookMarksMain" component={BookMarksMain}/>
-        <Stack.Screen name="BookMarksEdit" component={BookMarksEdit}/>
-        <Stack.Screen name="ContactMain" component={ContactMain}/>
-        <Stack.Screen name="ContactEdit" component={ContactsEdit}/>
-        <Stack.Screen name="MedicalMain" component={MedicalMain}/>
-        <Stack.Screen name="MedicalEdit" component={MedicalEdit}/>
-        <Stack.Screen name="InsuranceMain" component={InsuranceMain}/>
-        <Stack.Screen name="InsuranceEdit" component={InsuranceEdit}/>
-        <Stack.Screen name="CertificateMain" component={CertificateMain}/>
-        <Stack.Screen name="CertificateEdit" component={CertificateEdit}/>
-        <Stack.Screen name="PasswordsMain" component={PasswordsMain}/>
-        <Stack.Screen name="PasswordsEdit" component={PasswordsEdit}/>
-        <Stack.Screen name="GeneratePassword" component={GeneratePassword}/>
-        <Stack.Screen name="WifiRoutersMain" component={WifiRoutersMain}/>
+        <Stack.Screen name="BankAccountMain" component={BankAccountMain} />
+        <Stack.Screen name="BankAccountEdit" component={BankAccountEdit} />
+        <Stack.Screen name="CardsMainScreen" component={CardsMainScreen} />
+        <Stack.Screen name="CardsEditScreen" component={CardsEditScreen} />
+        <Stack.Screen name="CryptoMainScreen" component={CryptoMainScreen} />
+        <Stack.Screen name="CryptoEditScreen" component={CryptoEditScreen} />
+        <Stack.Screen name="IDCardsMain" component={IDCardsMain} />
+        <Stack.Screen name="IDCardsEdit" component={IDCardsEditScreen} />
+        <Stack.Screen name="TaxMainScreen" component={TaxMainScreen} />
+        <Stack.Screen name="TaxEditScreen" component={TaxEditScreen} />
+        <Stack.Screen
+          name="PassportMainScreen"
+          component={PassportMainScreen}
+        />
+        <Stack.Screen
+          name="PassportEditScreen"
+          component={PassportEditScreen}
+        />
+        <Stack.Screen
+          name="DrivingLicenseMain"
+          component={DrivingLicenseMain}
+        />
+        <Stack.Screen
+          name="DrivingLicenseEdit"
+          component={DrivingLicenseEdit}
+        />
+        <Stack.Screen name="TourVisaMain" component={TourVisaMain} />
+        <Stack.Screen name="TourVisaEdit" component={TourVisaEdit} />
+        <Stack.Screen name="MembershipMain" component={MembershipMain} />
+        <Stack.Screen name="MembershipEdit" component={MembershipEdit} />
+        <Stack.Screen name="AudioMain" component={AudioMain} />
+        <Stack.Screen name="AudioView" component={AudioView} />
+        <Stack.Screen name="ImagesMain" component={ImagesMain} />
+        <Stack.Screen name="ImagesView" component={ImagesView} />
+        <Stack.Screen name="DocumentMain" component={DocumentMain} />
+        <Stack.Screen name="DocumentView" component={DocumentView} />
+        <Stack.Screen name="NotesMain" component={NotesMain} />
+        <Stack.Screen name="NotesEdit" component={NotesEdit} />
+        <Stack.Screen name="BookMarksMain" component={BookMarksMain} />
+        <Stack.Screen name="BookMarksEdit" component={BookMarksEdit} />
+        <Stack.Screen name="ContactMain" component={ContactMain} />
+        <Stack.Screen name="ContactEdit" component={ContactsEdit} />
+        <Stack.Screen name="MedicalMain" component={MedicalMain} />
+        <Stack.Screen name="MedicalEdit" component={MedicalEdit} />
+        <Stack.Screen name="InsuranceMain" component={InsuranceMain} />
+        <Stack.Screen name="InsuranceEdit" component={InsuranceEdit} />
+        <Stack.Screen name="CertificateMain" component={CertificateMain} />
+        <Stack.Screen name="CertificateEdit" component={CertificateEdit} />
+        <Stack.Screen name="PasswordsMain" component={PasswordsMain} />
+        <Stack.Screen name="PasswordsEdit" component={PasswordsEdit} />
+        <Stack.Screen name="GeneratePassword" component={GeneratePassword} />
+        <Stack.Screen name="WifiRoutersMain" component={WifiRoutersMain} />
       </Stack.Navigator>
     </NavigationContainer>
   );
