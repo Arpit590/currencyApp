@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
         alignItems:"center"
       },
       contentText:{
-        fontFamily:FontFamily.primaryBold,
+        fontFamily:FontFamily.primaryMedium,
         fontSize:FontSizes.largeX,
         color:ThemeColors.textPrimary,
         marginLeft:10
@@ -92,6 +92,15 @@ const styles = StyleSheet.create({
         fontSize:FontSizes.normal,
         color:ThemeColors.textPrimary,
         marginTop:7
+      },
+      primaryButton:{
+        position:"absolute",
+        backgroundColor:ThemeColors.primary,
+        padding:20,
+        borderRadius:16,
+        alignItems:"center",
+        bottom:"3%",
+        right:"5%"
       }
 })
 

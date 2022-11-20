@@ -207,7 +207,8 @@ const Footer = props => {
                   </TouchableOpacity>
                   <TouchableOpacity
                   onPress={()=>{
-                    setOpenModal(false)
+                    setOpenModal(false);
+                    navigation.navigate("ContactEdit", {"new": true})
                   }}
                   activeOpacity={0.8} style={styles.box}>
                     <ContactsIcon/>
@@ -224,7 +225,8 @@ const Footer = props => {
                   </TouchableOpacity>
                   <TouchableOpacity 
                   onPress={()=>{
-                    setOpenModal(false)
+                    setOpenModal(false);
+                    navigation.navigate("NotesEdit", {"save": true})
                   }}
                   activeOpacity={0.8} style={styles.box}>
                     <NotesIcon/>

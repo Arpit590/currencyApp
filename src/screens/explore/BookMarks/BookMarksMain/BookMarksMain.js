@@ -3,10 +3,10 @@ import {View, Text, TextInput, ScrollView, TouchableOpacity, Image, Dimensions, 
 import { FontSizes, ThemeColors } from '../../../../theme/globalStyles';
 import styles from './styles';
 import SearchIcon from "../../../../assets/Search.svg";
-import ArrowDownIcon from "../../../../assets/ArrowDown.svg";
-import ArrowDownIcon1 from "../../../../assets/ArrowDown2.svg";
+import BookMarkIcon from "../../../../assets/BookMarks2.svg"
 import ArrowRightIcon from '../../../../assets/ArrowRight.svg';
 import BackIcon from "../../../../assets/Back.svg"; 
+import PlusIcon from "../../../../assets/PlusNew.svg";
 
 import { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
@@ -14,7 +14,7 @@ import { useNavigation } from '@react-navigation/native';
 const {width} = Dimensions.get("window");
 
 
-const BankAccountMain = () => {
+const BookMarksMain = () => {
 
   const navigation = useNavigation();
 
@@ -26,7 +26,7 @@ const BankAccountMain = () => {
             <TouchableOpacity activeOpacity={0.8} onPress={()=>navigation.goBack()}>
                 <BackIcon/>
             </TouchableOpacity>
-            <Text style={styles.heading}>Bank Account</Text>
+            <Text style={styles.heading}>BookMarks</Text>
             <View></View>
         </View>
         <View style={styles.search}>
@@ -44,52 +44,60 @@ const BankAccountMain = () => {
             <View
             style={styles.container}>
               <View style={styles.content}>
-                <Image
-                source={require("../../../../assets/BALogo.png")}
-                />
+                <View style={styles.logo}>
+                    <BookMarkIcon/>
+                </View>
                 <View style={{}}>
-                    <Text style={styles.contentText}>Indian Bank</Text>
-                    <Text style={[styles.contentText, {color:"#94928C", fontSize:FontSizes.normal, marginTop:3}]}>Indian Bank</Text>
+                    <Text style={styles.contentText}>Netflix</Text>
+                    <Text style={[styles.contentText, {color:"#94928C", fontSize:FontSizes.normal, marginTop:3}]}>www.netflix.com</Text>
                 </View>
               </View>
-              <TouchableOpacity activeOpacity={0.8} onPress={()=>{}} style={{alignSelf:"center"}}>
+              <TouchableOpacity activeOpacity={0.8} onPress={()=>{navigation.navigate("BookMarksEdit", {"save": false})}} style={{alignSelf:"center"}}>
                 <ArrowRightIcon/>
               </TouchableOpacity>
             </View>
             <View
             style={styles.container}>
               <View style={styles.content}>
-                <Image
-                source={require("../../../../assets/BALogo.png")}
-                />
+                <View style={styles.logo}>
+                    <BookMarkIcon/>
+                </View>
                 <View style={{}}>
-                    <Text style={styles.contentText}>Indian Bank</Text>
-                    <Text style={[styles.contentText, {color:"#94928C", fontSize:FontSizes.normal, marginTop:3}]}>Indian Bank</Text>
+                    <Text style={styles.contentText}>Netflix</Text>
+                    <Text style={[styles.contentText, {color:"#94928C", fontSize:FontSizes.normal, marginTop:3}]}>www.netflix.com</Text>
                 </View>
               </View>
-              <TouchableOpacity activeOpacity={0.8} onPress={()=>{}} style={{alignSelf:"center"}}>
+              <TouchableOpacity activeOpacity={0.8} onPress={()=>{navigation.navigate("BookMarksEdit", {"save": false})}} style={{alignSelf:"center"}}>
                 <ArrowRightIcon/>
               </TouchableOpacity>
             </View>
             <View
             style={styles.container}>
               <View style={styles.content}>
-                <Image
-                source={require("../../../../assets/BALogo.png")}
-                />
+                <View style={styles.logo}>
+                    <BookMarkIcon/>
+                </View>
                 <View style={{}}>
-                    <Text style={styles.contentText}>Indian Bank</Text>
-                    <Text style={[styles.contentText, {color:"#94928C", fontSize:FontSizes.normal, marginTop:3}]}>Indian Bank</Text>
+                    <Text style={styles.contentText}>Netflix</Text>
+                    <Text style={[styles.contentText, {color:"#94928C", fontSize:FontSizes.normal, marginTop:3}]}>www.netflix.com</Text>
                 </View>
               </View>
-              <TouchableOpacity activeOpacity={0.8} onPress={()=>{}} style={{alignSelf:"center"}}>
+              <TouchableOpacity activeOpacity={0.8} onPress={()=>{navigation.navigate("BookMarksEdit", {"save": false})}} style={{alignSelf:"center"}}>
                 <ArrowRightIcon/>
               </TouchableOpacity>
             </View>
           </ScrollView>
         </View>
+        <TouchableOpacity 
+        activeOpacity={0.8}
+        onPress={()=>{
+            navigation.navigate("BookMarksEdit", {"new": true})
+        }}
+        style={styles.primaryButton}>
+          <PlusIcon/>
+        </TouchableOpacity>
     </View>
   );
 };
 
-export default BankAccountMain;
+export default BookMarksMain;

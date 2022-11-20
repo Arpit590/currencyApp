@@ -30,7 +30,7 @@ const LoginsMain = () => {
                 <Text style={styles.text}>Passwords</Text>
             </View>
             <TouchableOpacity 
-            onPress={()=>navigation.navigate("Identity Details")}
+            onPress={()=>navigation.navigate("PasswordsEdit", {"new": true})}
             activeOpacity={0.8}>
                 <AddIcon/>
             </TouchableOpacity>

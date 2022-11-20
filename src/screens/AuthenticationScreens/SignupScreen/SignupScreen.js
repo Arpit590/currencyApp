@@ -76,7 +76,7 @@ const SignupScreen = () => {
             title={login ? "Login" :"Create My Account"}
             buttonHandler={()=>{
                 if(login){
-                    setOpenModal1(true);
+                    // setOpenModal1(true);
                 }else{
                 navigation.navigate("Verification", {"email": email});
                 setOpenModal1(false);
