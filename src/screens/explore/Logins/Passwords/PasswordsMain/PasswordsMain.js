@@ -3,14 +3,13 @@ import {View, Text, TextInput, ScrollView, TouchableOpacity, Image, Dimensions, 
 import { FontSizes, ThemeColors } from '../../../../../theme/globalStyles';
 import styles from './styles';
 import SearchIcon from "../../../../../assets/Search.svg";
-import ArrowDownIcon from "../../../../../assets/ArrowDown.svg";
+import RefreshIcon from "../../../../../assets/RefreshIcon1.svg";
+import CopyIcon from "../../../../../assets/Copy.svg";
 import ArrowDownIcon1 from "../../../../../assets/ArrowDown2.svg";
 import ArrowRightIcon from '../../../../../assets/ArrowRight.svg';
 import BackIcon from "../../../../../assets/Back.svg"; 
 import PlusIcon from "../../../../../assets/PlusNew.svg";
-import GlobeIcon from "../../../../../assets/Globe.svg";
-import LockIcon from "../../../../../assets/Lock.svg";
-import PasswordIcon from "../../../../../assets/Password.svg";
+import EyeActiveIcon from "../../../../../assets/EyeActiveIcon.svg";
 import InfoIcon from "../../../../../assets/Info.svg";
 import ShareIcon from "../../../../../assets/Share.svg";
 import ForwardIcon from "../../../../../assets/Forward.svg";
@@ -43,7 +42,7 @@ const PasswordsMain = () => {
     console.log("Text" + text);
       setModal(true);
       Animated.timing(value, {
-        toValue:180,
+        toValue:300,
         duration:1500,
         useNativeDriver:false
       }).start()
@@ -90,7 +89,7 @@ const PasswordsMain = () => {
               <View>
                 <View
                 key={item.id}
-                style={styles.box}>
+                style={[styles.box,!modal ? {} : {borderWidth:1, borderColor:"#DBD9D1", marginHorizontal:20, borderRadius:10}]}>
                   <View style={styles.boxContainer}>
                     <Image
                     source={item.imgUri}
@@ -100,9 +99,7 @@ const PasswordsMain = () => {
                       <View style={{}}>
                         <View style={{flexDirection:"row", alignItems:"center"}}>
                           <Text style={styles.boxText} numberOfLines={1}>{item.heading}</Text>
-                          <View style={styles.view3}>
-                            <Text style={styles.boxText2}>{item.filter}</Text>
-                          </View>
+                          <RefreshIcon/>
                         </View>
                         <Text style={styles.boxText1} numberOfLines={1}>{item.desc}</Text>
                       </View>
@@ -121,32 +118,59 @@ const PasswordsMain = () => {
                   </TouchableOpacity>
                   }
                 </View>
-                <Animated.View style={[styles.view4, {height:value, display: modal===false ? "none" : "flex"}]}>
+                <Animated.View style={[styles.view4, {height:value, display: modal===false ? "none" : "flex", borderWidth:1, borderColor:"#DBD9D1", marginHorizontal:20, borderRadius:10, alignSelf:"center", width:"90%"}]}>
                   {(modal) && 
                   <>
-                  <View style={styles.view5}>
-                    <View style={{flexDirection:"row", alignItems:"center"}}>
-                      <GlobeIcon/>
-                      <Text style={[styles.boxText2, {fontSize:FontSizes.large, marginLeft:20}]}>{item?.website}</Text>
+                  <View style={[styles.view5, {marginHorizontal:20}]}>
+                    <View style={styles.container1}>
+                      <View style={styles.container3}>
+                        <View style={styles.container2}>
+                          <Text style={styles.container2Text}>Netflix</Text>
+                          <RefreshIcon/>
+                        </View>
+                        <Text style={[styles.container2Text, {color:"#BBBAB3", fontSize:FontSizes.tiny}]}>Entertainment</Text>
+                      </View>
+                      <View style={styles.container2}>
+                        <Text style={[styles.container3Text]}>Updated last <Text style={{color:ThemeColors.textPrimary}}>4 days</Text> ago</Text>
+                        <EyeActiveIcon/>
+                      </View>
                     </View>
-                    <ForwardIcon/>
+                    <View style={styles.container4}>
+                      <View style={styles.container5}>
+                        <Text style={styles.container5Heading}>UserName</Text>
+                        <View style={styles.container6}>
+                          <Text style={styles.container6Heading}>sb1930013</Text>
+                          <TouchableOpacity activeOpacity={0.8}>
+                            <CopyIcon/>
+                          </TouchableOpacity>
+                        </View>
+                      </View>
+                      <View style={styles.container5}>
+                        <Text style={styles.container5Heading}>Password</Text>
+                        <View style={styles.container6}>
+                          <Text style={styles.container6Heading}>asjajsajk29237812</Text>
+                          <TouchableOpacity activeOpacity={0.8}>
+                            <CopyIcon/>
+                          </TouchableOpacity>
+                        </View>
+                      </View>
+                    </View>
+                    <View style={styles.container7}>
+                      <TouchableOpacity activeOpacity={0.8} style={styles.button}>
+                        <Text style={styles.buttonText}>Go to Website</Text>
+                      </TouchableOpacity>
+                      <TouchableOpacity 
+                       onPress={()=>{
+                        navigation.navigate("PasswordsEdit", {"save": false})
+                      }}
+                      activeOpacity={0.8} style={[styles.button, {backgroundColor:"white", borderWidth:2, borderColor:ThemeColors.textPrimary}]}>
+                        <Text style={styles.buttonText}>Edit Details</Text>
+                      </TouchableOpacity>
+                    </View>
                   </View>
-                  <View style={[styles.view5, {marginTop:20}]}>
-                    <View style={{flexDirection:"row", alignItems:"center"}}>
-                      <LockIcon/>
-                      <Text style={[styles.boxText2, {fontSize:FontSizes.large, marginLeft:20}]}>********************</Text>
-                    </View>
-                    <PasswordIcon/>
-                  </View>
-                  <View style={styles.view6}>
-                    <View style={styles.view7}>
-                      <InfoIcon/>
-                      <Text style={styles.infoText}>See Details</Text>
-                    </View>
-                    <View style={styles.view7}>
-                      <ShareIcon/>
-                      <Text style={styles.infoText}>Share</Text>
-                    </View>
+                  <View style={[styles.view6, {marginHorizontal:20}]}>
+                        <Text style={[styles.buttonText, {color:"#BBBAB3", fontSize:FontSizes.smallX}]}>Additional Information</Text>
+                        <Text style={[styles.buttonText, {color:ThemeColors.textPrimary, fontSize:FontSizes.smallXX, marginTop:7}]}>Additional Information to kept in this scenario</Text>
                   </View>
                   </>
                   }

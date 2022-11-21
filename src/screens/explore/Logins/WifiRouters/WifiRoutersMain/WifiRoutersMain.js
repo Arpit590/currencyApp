@@ -53,7 +53,7 @@ const WifiRoutersMain = () => {
                     <Text style={[styles.contentText, {color:"#94928C", fontSize:FontSizes.normal, marginTop:3}]}>skffljddl</Text>
                 </View>
               </View>
-              <TouchableOpacity activeOpacity={0.8} onPress={()=>{navigation.navigate("BankAccountEdit")}} style={{alignSelf:"center"}}>
+              <TouchableOpacity activeOpacity={0.8} onPress={()=>{navigation.navigate("WifiRoutersEdit", {"save": false})}} style={{alignSelf:"center"}}>
                 <ArrowRightIcon/>
               </TouchableOpacity>
             </View>
@@ -62,7 +62,7 @@ const WifiRoutersMain = () => {
         <TouchableOpacity 
         activeOpacity={0.8}
         onPress={()=>{
-          navigation.navigate("BankAccountEdit", {"save": true})
+          navigation.navigate("WifiRoutersEdit", {"new": true})
         }}
         style={styles.primaryButton}>
           <PlusIcon/>

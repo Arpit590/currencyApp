@@ -11,7 +11,6 @@ import Navigation from './navigation/Navigation';
 import HomeScreen from './screens/home/Home';
 import ProfileScreen from './screens/profile/Profile';
 import ExploreScreen from './screens/explore/Explore';
-import GeneratorScreen from './screens/generator/Generator';
 import SeedPhrase from './screens/AuthenticationScreens/SeedPhrase/SeedPhrase';
 import VerifySeed from './screens/AuthenticationScreens/SeedPhrase/VerifySeed';
 import CreatePin from './screens/AuthenticationScreens/CreatePin/CreatePin';
@@ -76,6 +75,10 @@ import PasswordsMain from './screens/explore/Logins/Passwords/PasswordsMain/Pass
 import PasswordsEdit from './screens/explore/Logins/Passwords/PasswordsEdit/PassWordsEdit';
 import GeneratePassword from './screens/explore/Logins/Passwords/GeneratePasswords/GeneratePassword';
 import WifiRoutersMain from './screens/explore/Logins/WifiRouters/WifiRoutersMain/WifiRoutersMain';
+import SyncScreen from './screens/sync/Sync';
+import WifiRoutersEdit from './screens/explore/Logins/WifiRouters/WifiRoutersEdit/WifiRoutersEdit';
+import FAMain from './screens/explore/Logins/FA/FAMain/FAMain';
+import FAEdit from './screens/explore/Logins/FA/FAEdit/FAEdit';
 
 const Stack = createNativeStackNavigator();
 
@@ -124,7 +127,7 @@ export default function Main() {
         <Stack.Screen name="BankAccounts" component={BankAccount} />
         <Stack.Screen name="Lender" component={Lender} />
         <Stack.Screen name="CryptoWallet" component={CryptoWallet} />
-        <Stack.Screen name="GeneratorScreen" component={GeneratorScreen} />
+        <Stack.Screen name="Sync" component={SyncScreen} />
         <Stack.Screen name="BankAccountMain" component={BankAccountMain} />
         <Stack.Screen name="BankAccountEdit" component={BankAccountEdit} />
         <Stack.Screen name="CardsMainScreen" component={CardsMainScreen} />
@@ -177,6 +180,9 @@ export default function Main() {
         <Stack.Screen name="PasswordsEdit" component={PasswordsEdit} />
         <Stack.Screen name="GeneratePassword" component={GeneratePassword} />
         <Stack.Screen name="WifiRoutersMain" component={WifiRoutersMain} />
+        <Stack.Screen name="WifiRoutersEdit" component={WifiRoutersEdit} />
+        <Stack.Screen name="FAMain" component={FAMain} />
+        <Stack.Screen name="FAEdit" component={FAEdit} />
       </Stack.Navigator>
     </NavigationContainer>
   );

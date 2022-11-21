@@ -237,7 +237,9 @@ const Explore = () => {
               </View>
               <Text style={styles.text}>Passwords</Text>
             </TouchableOpacity>
-            <TouchableOpacity activeOpacity={0.8} style={styles.modalContent}>
+            <TouchableOpacity
+            onPress={() => navigation.navigate('FAMain')}
+            activeOpacity={0.8} style={styles.modalContent}>
               <View style={styles.logo}>
                 <FAIcon />
               </View>

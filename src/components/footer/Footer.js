@@ -116,12 +116,12 @@ const Footer = props => {
           style={{
             ...styles.iconContainer,
             backgroundColor:
-              props.routeName !== 'Generator'
+              props.routeName !== 'Sync'
                 ? ThemeColors.white
                 : ThemeColors.lightYellow,
           }}>
-          <TouchableOpacity onPress={() => props.onChange('Generator')}>
-            {props.routeName !== 'Generator' ? (
+          <TouchableOpacity onPress={() => props.onChange('Sync')}>
+            {props.routeName !== 'Sync' ? (
               <Generator_Icon_Off />
             ) : (
               <Generator_Icon_On />
@@ -129,7 +129,7 @@ const Footer = props => {
           </TouchableOpacity>
           <Text
             style={
-              props.routeName !== 'Generator' ? styles.textOff : styles.textOn
+              props.routeName !== 'Sync' ? styles.textOff : styles.textOn
             }>
             Sync
           </Text>

@@ -151,6 +151,29 @@ const styles = StyleSheet.create({
     color: ThemeColors.textPrimary,
     marginTop: 5,
   },
+  view8:{
+    flexDirection:"row",
+    alignItems:"center"
+  },
+  viewText:{
+    fontFamily:FontFamily.secondaryRegular,
+    fontSize:FontSizes.large,
+    color:"#94928C",
+    marginLeft:25
+  },
+  image:{
+    marginBottom:20,
+    resizeMode:"contain"
+  },
+  desc:{
+    fontFamily:FontFamily.secondaryRegular,
+    fontSize:FontSizes.normal,
+    color:"#94928C",
+    maxWidth:300,
+    marginBottom:20,
+    paddingLeft:20,
+    alignSelf:"flex-start"
+  }
 });
 
 export default styles;

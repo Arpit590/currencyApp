@@ -20,9 +20,18 @@ import ArrowDownIcon1 from '../../assets/ArrowDown2.svg';
 import GlobeIcon from '../../assets/Globe.svg';
 import LockIcon from '../../assets/Lock.svg';
 import PasswordIcon from '../../assets/Password.svg';
+import PhoneIcon from "../../assets/Phone.svg";
+import EditIcon from "../../assets/EditIcon.svg";
+import TimeIcon from "../../assets/TimeIcon.svg";
 import InfoIcon from '../../assets/Info.svg';
 import ShareIcon from '../../assets/Share.svg';
 import ForwardIcon from '../../assets/Forward.svg';
+import CalendarIcon from "../../assets/CalendarIcon.svg";
+import UserIcon from "../../assets/UserIcon.svg";
+import BankIcon from "../../assets/BankIcon.svg";
+import ArrowsIcon from "../../assets/ArrowsIcon.svg";
+import CopyIcon from "../../assets/CopyIcon.svg";
+import CardIcon from "../../assets/CardIcon.svg";
 import ArrowUpIcon from '../../assets/ArrowUp.svg';
 import {useState} from 'react';
 
@@ -247,6 +256,7 @@ const HomeScreen = () => {
                           },
                         ]}>
                         {modal && (
+                          (index===0) ?
                           <>
                             <View style={styles.view5}>
                               <View
@@ -282,6 +292,16 @@ const HomeScreen = () => {
                               </View>
                               <PasswordIcon />
                             </View>
+                            <View style={[styles.view6, {flexDirection:"column", alignItems:"flex-start", paddingHorizontal:20}]}>
+                              <View style={styles.view8}>
+                                <TimeIcon/>
+                                <Text style={[styles.viewText, {marginLeft:15}]}>12th Jan 2022, 9.33pm</Text>
+                              </View>
+                              <View style={[styles.view8,{marginTop:20}]}>
+                                <PhoneIcon/>
+                                <Text style={styles.viewText}>Vivo 1811</Text>
+                              </View>
+                            </View>
                             <View style={styles.view6}>
                               <View style={styles.view7}>
                                 <InfoIcon />
@@ -293,6 +313,240 @@ const HomeScreen = () => {
                               </View>
                             </View>
                           </>
+                          :
+                          (index===4) ?
+                          <>
+                            <View style={[styles.view5, {marginBottom:20}]}>
+                              <View
+                                style={{
+                                  flexDirection: 'row',
+                                  alignItems: 'center',
+                                }}>
+                                <GlobeIcon />
+                                <Text
+                                  style={[
+                                    styles.boxText2,
+                                    {fontSize: FontSizes.large, marginLeft: 20},
+                                  ]}>
+                                  {item?.website}
+                                </Text>
+                              </View>
+                              <ForwardIcon />
+                            </View>
+                            <View style={[styles.view6, {flexDirection:"column", alignItems:"flex-start", paddingHorizontal:20}]}>
+                              <View style={styles.view8}>
+                                <TimeIcon/>
+                                <Text style={[styles.viewText, {marginLeft:15}]}>12th Jan 2022, 9.33pm</Text>
+                              </View>
+                              <View style={[styles.view8,{marginTop:20}]}>
+                                <PhoneIcon/>
+                                <Text style={styles.viewText}>Vivo 1811</Text>
+                              </View>
+                            </View>
+                            <View style={styles.view6}>
+                              <View style={styles.view7}>
+                                <InfoIcon />
+                                <Text style={styles.infoText}>See Details</Text>
+                              </View>
+                              <View style={styles.view7}>
+                                <ShareIcon />
+                                <Text style={styles.infoText}>Share</Text>
+                              </View>
+                            </View>
+                          </>
+                          : (index===1) ?
+                          <>
+                             <Image
+                              source={require("../../assets/Card.png")}
+                              style={styles.image}
+                              />
+                            <View style={[styles.view5, {marginBottom:10}]}>
+                              <View
+                                style={{
+                                  flexDirection: 'row',
+                                  alignItems: 'center',
+                                }}>
+                                <CardIcon/>
+                                <Text
+                                  style={[
+                                    styles.boxText2,
+                                    {fontSize: FontSizes.large, marginLeft: 20},
+                                  ]}>
+                                  4844 5432 6453 ****
+                                </Text>
+                              </View>
+                              <TouchableOpacity activeOpacity={0.8}>
+                                <CopyIcon />
+                              </TouchableOpacity>
+                            </View>
+                            <View style={[styles.view5, {marginBottom:10}]}>
+                              <View
+                                style={{
+                                  flexDirection: 'row',
+                                  alignItems: 'center',
+                                }}>
+                                <UserIcon/>
+                                <Text
+                                  style={[
+                                    styles.boxText2,
+                                    {fontSize: FontSizes.large, marginLeft: 20},
+                                  ]}>
+                                  Dinesh Mohapatra
+                                </Text>
+                              </View>
+                            </View>
+                            <View style={[styles.view5, {marginBottom:20}]}>
+                              <View
+                                style={{
+                                  flexDirection: 'row',
+                                  alignItems: 'center',
+                                }}>
+                                <CalendarIcon/>
+                                <Text
+                                  style={[
+                                    styles.boxText2,
+                                    {fontSize: FontSizes.large, marginLeft: 20},
+                                  ]}>
+                                  02/30
+                                </Text>
+                              </View>
+                            </View>
+                            <View style={[styles.view6, {flexDirection:"column", alignItems:"flex-start", paddingHorizontal:20}]}>
+                              <View style={styles.view8}>
+                                <TimeIcon/>
+                                <Text style={[styles.viewText, {marginLeft:15}]}>12th Jan 2022, 9.33pm</Text>
+                              </View>
+                              <View style={[styles.view8,{marginTop:20}]}>
+                                <PhoneIcon/>
+                                <Text style={styles.viewText}>Vivo 1811</Text>
+                              </View>
+                            </View>
+                            <View style={styles.view6}>
+                              <View style={styles.view7}>
+                                <InfoIcon />
+                                <Text style={styles.infoText}>See Details</Text>
+                              </View>
+                              <View style={styles.view7}>
+                                <ShareIcon />
+                                <Text style={styles.infoText}>Share</Text>
+                              </View>
+                            </View>
+                          </>
+                          :
+                          (index===5) ?
+                          <>
+                            <View style={[styles.view5, {marginBottom:10}]}>
+                              <View
+                                style={{
+                                  flexDirection: 'row',
+                                  alignItems: 'center',
+                                }}>
+                                <UserIcon/>
+                                <Text
+                                  style={[
+                                    styles.boxText2,
+                                    {fontSize: FontSizes.large, marginLeft: 20},
+                                  ]}>
+                                    Dinesh Mohapatra
+                                </Text>
+                              </View>
+                            </View>
+                            <View style={[styles.view5, {marginBottom:20}]}>
+                              <View
+                                style={{
+                                  flexDirection: 'row',
+                                  alignItems: 'center',
+                                }}>
+                                <BankIcon/>
+                                <Text
+                                  style={[
+                                    styles.boxText2,
+                                    {fontSize: FontSizes.large, marginLeft: 20},
+                                  ]}>
+                                    123456789012
+                                </Text>
+                              </View>
+                              <TouchableOpacity activeOpacity={0.8}>
+                                <CopyIcon />
+                              </TouchableOpacity>
+                            </View>
+                            <View style={[styles.view5, {marginBottom:20}]}>
+                              <View
+                                style={{
+                                  flexDirection: 'row',
+                                  alignItems: 'center',
+                                }}>
+                                <ArrowsIcon/>
+                                <Text
+                                  style={[
+                                    styles.boxText2,
+                                    {fontSize: FontSizes.large, marginLeft: 20},
+                                  ]}>
+                                    PYTM0123456
+                                </Text>
+                              </View>
+                              <TouchableOpacity activeOpacity={0.8}>
+                                <CopyIcon />
+                              </TouchableOpacity>
+                            </View>
+                            <View style={[styles.view6, {flexDirection:"column", alignItems:"flex-start", paddingHorizontal:20}]}>
+                              <View style={styles.view8}>
+                                <TimeIcon/>
+                                <Text style={[styles.viewText, {marginLeft:15}]}>12th Jan 2022, 9.33pm</Text>
+                              </View>
+                              <View style={[styles.view8,{marginTop:20}]}>
+                                <PhoneIcon/>
+                                <Text style={styles.viewText}>Vivo 1811</Text>
+                              </View>
+                            </View>
+                            <View style={styles.view6}>
+                              <View style={styles.view7}>
+                                <InfoIcon />
+                                <Text style={styles.infoText}>See Details</Text>
+                              </View>
+                              <View style={styles.view7}>
+                                <ShareIcon />
+                                <Text style={styles.infoText}>Share</Text>
+                              </View>
+                            </View>
+                          </>:
+                          (index===3) ?
+                          <>
+                            <View style={[styles.view5, {marginBottom:0}]}>
+                              <Text
+                                style={[
+                                  styles.boxText2,
+                                  {fontSize: FontSizes.large},
+                                ]}>
+                                  List of Candidates
+                              </Text>
+                              <TouchableOpacity activeOpacity={0.8}>
+                                <EditIcon/>
+                              </TouchableOpacity>
+                            </View>
+                            <Text style={styles.desc}>It is unkonwn to all of the superfiles if called not dnjdjahhaj wwyqjnbc sdjdhujw  sjhjdjsb sdhjhsjdnj djjasdjnajnjdjah tbdbahdhus js e bashg  ag</Text>
+                            <View style={[styles.view6, {flexDirection:"column", alignItems:"flex-start", paddingHorizontal:20}]}>
+                              <View style={styles.view8}>
+                                <TimeIcon/>
+                                <Text style={[styles.viewText, {marginLeft:15}]}>12th Jan 2022, 9.33pm</Text>
+                              </View>
+                              <View style={[styles.view8,{marginTop:20}]}>
+                                <PhoneIcon/>
+                                <Text style={styles.viewText}>Vivo 1811</Text>
+                              </View>
+                            </View>
+                            <View style={styles.view6}>
+                              <View style={styles.view7}>
+                                <InfoIcon />
+                                <Text style={styles.infoText}>See Details</Text>
+                              </View>
+                              <View style={styles.view7}>
+                                <ShareIcon />
+                                <Text style={styles.infoText}>Share</Text>
+                              </View>
+                            </View>
+                          </>
+                          :null
                         )}
                       </View>
                     ) : null}

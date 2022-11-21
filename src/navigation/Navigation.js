@@ -7,14 +7,14 @@ import * as Animatable from 'react-native-animatable';
 import HomeScreen from '../screens/home/Home';
 import ExploreScreen from '../screens/explore/Explore';
 import ProfileScreen from '../screens/profile/Profile';
-import GeneratorScreen from '../screens/generator/Generator';
+import SyncScreen from '../screens/sync/Sync';
 import Footer from '../components/footer/Footer';
 
 const screens = {
   Home: HomeScreen,
   Explore: ExploreScreen,
   Profile: ProfileScreen,
-  Generator: GeneratorScreen,
+  Sync: SyncScreen,
 };
 
 function Navigation() {

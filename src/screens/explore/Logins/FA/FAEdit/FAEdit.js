@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Switch, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react';
 import styles from './styles';
 import { useNavigation, useRoute } from '@react-navigation/native';
@@ -7,15 +7,21 @@ import ArrowDownIcon from "../../../../../assets/ArrowDown.svg";
 import EyeInActiveIcon from "../../../../../assets/EyeInActive.svg";
 import DatePicker from 'react-native-date-picker';
 import PrimaryButton from "../../../../../Atoms/PrimaryButton";
+import FAIcon from "../../../../../assets/FA.svg";
 import CalendarIcon from "../../../../../assets/Line.svg";
-import { FontFamily, ThemeColors } from '../../../../../theme';
+import CircleIcon from "../../../../../assets/Circle.svg";
+import { FontSizes } from '../../../../../theme';
 
 
-const PasswordsEdit = () => {
+const FAEdit = () => {
 
     const navigation = useNavigation();
+    const [showPass, setShowPass] = useState(false);
+    const [openDropDown, setOpenDropDown] = useState(false);
+    const [country, setCountry] = useState("");
+    const [open, setOpen] = useState(false);
+    const [expiryDate, setExpiryDate]= useState(new Date());
     const route = useRoute();
-    const [enable, setEnable] = useState(false);
 
   return (
     <View style={styles.screen}>
@@ -23,77 +29,53 @@ const PasswordsEdit = () => {
         <TouchableOpacity activeOpacity={0.8} onPress={()=>navigation.goBack()}>
             <BackIcon/>
         </TouchableOpacity>
-        <Text style={styles.heading}>{route?.params?.new===true ? "Password" : "Netflix"}</Text>
+        <Text style={styles.heading}>{route?.params?.new ? "2FA" : "Uphold"}</Text>
         <View></View>
       </View>
       <ScrollView showsVerticalScrollIndicator={false} style={styles.view1}>
-        <View style={[styles.formContent, {flexDirection:"row", alignItems:"center", justifyContent:"space-between"}]}>
-            <Text style={[styles.formText, {color:ThemeColors.textPrimary, fontFamily:FontFamily.secondaryRegular, marginBottom:0}]}>Enable Synced Password</Text>
-            <Switch
-                id="EnableSync"
-                trackColor={{ false: "#DBD9D1", true: "#FFD700" }}
-                thumbColor={"#DBD9D1"}
-                ios_backgroundColor="#DBD9D1"
-                onValueChange={() => {
-                  setEnable(!enable);
-                }}
-                value={enable}
-              />
-        </View>
         <View style={styles.formContent}>
-            <Text style={styles.formText}>Website Name</Text>
+            <Text style={styles.formText}>Name</Text>
             <View style={styles.input}>
               <TextInput
-              placeholder='Website Name'
+              placeholder='Name'
               placeholderTextColor="#BBBAB3"
               style={styles.inputText}
               />
             </View>
         </View>
         <View style={styles.formContent}>
-            <Text style={styles.formText}>Category</Text>
+            <Text style={styles.formText}>2FA Secret</Text>
             <View style={styles.input}>
               <TextInput
-              placeholder='Category'
+              placeholder='2FA Secret'
+              placeholderTextColor="#BBBAB3"
+              style={styles.inputText}
+              />
+              {(route?.params?.new===true || route?.params?.save===true) && 
+              <TouchableOpacity activeOpacity={0.8}>
+                <FAIcon/>
+              </TouchableOpacity>
+              }
+            </View>
+        </View>
+        <View style={styles.formContent}>
+            <Text style={styles.formText}>Tags</Text>
+            <View style={styles.input}>
+              <TextInput
+              placeholder='Tags'
               placeholderTextColor="#BBBAB3"
               style={styles.inputText}
               />
             </View>
         </View>
         <View style={styles.formContent}>
-            <Text style={styles.formText}>Website Link</Text>
+            <Text style={styles.formText}>Profile</Text>
             <View style={styles.input}>
               <TextInput
-              placeholder='Website Link'
+              placeholder='Profile'
               placeholderTextColor="#BBBAB3"
               style={styles.inputText}
               />
-            </View>
-        </View>
-        <View style={styles.formContent}>
-            <Text style={styles.formText}>User Name</Text>
-            <View style={styles.input}>
-              <TextInput
-              placeholder='User Name'
-              placeholderTextColor="#BBBAB3"
-              style={styles.inputText}
-              />
-            </View>
-        </View>
-        <View style={styles.formContent}>
-            <Text style={styles.formText}>Password</Text>
-            <View style={styles.input}>
-              <TextInput
-              placeholder='Password'
-              placeholderTextColor="#BBBAB3"
-              style={styles.inputText}
-              />
-            </View>
-            <View style={{alignSelf:"flex-start", marginTop:10}}>
-            <PrimaryButton
-            title="Generate Password"
-            buttonHandler={()=>{navigation.navigate("GeneratePassword")}}
-            />
             </View>
         </View>
         <View style={styles.formContent}>
@@ -110,18 +92,19 @@ const PasswordsEdit = () => {
       </ScrollView>
       <View style={{marginHorizontal:20}}>
         <PrimaryButton
-        title={route?.params?.save===true ? "Save Details" : route?.params?.new===true ? "Add Details" : "Edit Details"}
+        title={route?.params?.save===true ? "Save 2FA" : route?.params?.new ? "Add 2FA" : "Edit 2FA"}
         buttonHandler={()=>{
             if(route?.params?.save===false){
-                navigation.navigate("PasswordsEdit", {"save": true})
+                navigation.navigate("FAEdit", {"save": true})
             }else{
                 navigation.goBack()
             }
         }}
         />
       </View>
+      {console.log("save" + JSON.stringify(route?.params))}
     </View>
   )
 }
 
-export default PasswordsEdit
+export default FAEdit

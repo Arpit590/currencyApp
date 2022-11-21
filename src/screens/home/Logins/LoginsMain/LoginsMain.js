@@ -44,7 +44,7 @@ const LoginsMain = () => {
             <Text style={styles.text}>2 FAs</Text>
           </View>
           <TouchableOpacity
-            onPress={() => navigation.navigate('Tax')}
+            onPress={() => navigation.navigate('FAEdit', {new: true})}
             activeOpacity={0.8}>
             <AddIcon />
           </TouchableOpacity>
@@ -57,7 +57,7 @@ const LoginsMain = () => {
             <Text style={styles.text}>Wifi Routers</Text>
           </View>
           <TouchableOpacity
-            onPress={() => navigation.navigate('Passport')}
+            onPress={() => navigation.navigate('WifiRoutersEdit', {new: true})}
             activeOpacity={0.8}>
             <AddIcon />
           </TouchableOpacity>
