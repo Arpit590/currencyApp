@@ -79,6 +79,10 @@ import SyncScreen from './screens/sync/Sync';
 import WifiRoutersEdit from './screens/explore/Logins/WifiRouters/WifiRoutersEdit/WifiRoutersEdit';
 import FAMain from './screens/explore/Logins/FA/FAMain/FAMain';
 import FAEdit from './screens/explore/Logins/FA/FAEdit/FAEdit';
+import ChangePasswordScreen from './screens/profile/ChangePassword/ChangePasswordScreen';
+import AddPIN from './screens/profile/AddPIN/AddPIN';
+import Language from './screens/profile/Language/Language';
+import Face from './screens/profile/Face/Face';
 
 const Stack = createNativeStackNavigator();
 
@@ -183,6 +187,10 @@ export default function Main() {
         <Stack.Screen name="WifiRoutersEdit" component={WifiRoutersEdit} />
         <Stack.Screen name="FAMain" component={FAMain} />
         <Stack.Screen name="FAEdit" component={FAEdit} />
+        <Stack.Screen name="ChangePasswordScreen" component={ChangePasswordScreen} />
+        <Stack.Screen name="AddPIN" component={AddPIN} />
+        <Stack.Screen name="Language" component={Language} />
+        <Stack.Screen name="Face" component={Face} />
       </Stack.Navigator>
     </NavigationContainer>
   );
