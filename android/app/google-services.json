@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "893866878981",
+    "project_id": "currecnyconverterapp",
+    "storage_bucket": "currecnyconverterapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893866878981:android:59fcc7706de45adbb8d46c",
+        "android_client_info": {
+          "package_name": "com.hushkey"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByGls3UHP6PHc0LgPyz0AsL9nlGyz0Hyg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
