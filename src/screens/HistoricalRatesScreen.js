@@ -24,7 +24,6 @@ const HistoricalRatesScreen = () => {
     <View>
       <Text>Select Date: {selectedDate.toDateString()}</Text>
       <Button title="Pick a Date" onPress={openDatePicker} />
-      {/* Fetch historical exchange rates for selectedDate */}
     </View>
   );
 };
